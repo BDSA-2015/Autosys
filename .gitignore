@@ -7,10 +7,14 @@
 *.userosscache
 *.sln.docstates
 *.aux
+<<<<<<< HEAD
+*.log
+*.gz
+=======
 *.dvi
-*.pdf
 *.iml
 
+>>>>>>> origin/master
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -199,3 +203,6 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+*.pdf
+Resources/UseCase Diagram.pdf
+Resources/UseCase Diagram.pdf

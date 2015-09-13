@@ -1,14 +1,3 @@
-\documentclass{article}
-
-\usepackage{fullpage}
-\usepackage{tabu}
-\usepackage{enumitem}
-\usepackage{courier}
-\usepackage{xspace}
-\usepackage{calc}
-
-
-\begin{document}
 
 %
 % DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES
@@ -41,12 +30,12 @@
 	\textit{Flow of events} &
 	\vspace{-3mm}
 	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \researcher login into the Client
+		\item The researcher logins into the Client
 		\item He/she activates the Manage Study module
 		\item The \researcher chooses to upload task data about a completed task.
 		\item The researcher specifies the study information he/she wishes to retrieve
 		item The researcher confirms he/she wants to retrieve details regarding the Study
-		\item The message is sent to the server where the senders credentials are checked in the database. If the \client has access, then precede, otherwise a statement is sent to the \client detailing why he was rejected access.
+		\item The message is sent to the server where the senders credentials are checked in the database. If he has access, then precede otherwise a statement I sent to the client detailing why he was rejected access.
 		\begin{itemize} 
 			\item There exist a entry which matches the search criteria, then continue 
 			\item There is no entry which matches the search criteria and an error message will be sent to the client.
@@ -77,5 +66,3 @@
 \caption{Use case: RetrieveStudyInformation}
 \label{uc:RetrieveStudyInformation}
 \end{table}
-
-\end{document}
