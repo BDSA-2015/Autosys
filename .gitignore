@@ -8,12 +8,10 @@
 *.sln.docstates
 *.aux
 <<<<<<< HEAD
-*.pdf
 *.log
 *.gz
 =======
 *.dvi
-*.pdf
 *.iml
 
 >>>>>>> origin/master
