@@ -1,0 +1,202 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{tabu}
+\usepackage{enumitem}
+\usepackage{courier}
+\usepackage{xspace}
+\usepackage{calc}
+
+\title{System Models}
+
+\begin{document}
+\maketitle
+
+%
+% DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES FOR SCENARIOS
+%
+% ACTORS
+\newcommand{\researcher}{\texttt{Researcher}\xspace}
+\newcommand{\clientside}{\texttt{StudyConfigurationUI}\xspace}
+\newcommand{\invalidUser}{\texttt{InvalidUser}\xspace}
+\newcommand{\serverside}{\texttt{StudyConfigurationServer}\xspace}
+% ANALYSIS OBJECTS
+\newcommand{\incident}{\texttt{Incident}\xspace}
+% USE CASES
+\newcommand{\reportemergency}{\texttt{ReportEmergency}\xspace}
+\newcommand{\openincident}{\texttt{OpenIncident}\xspace}
+
+\section{Scenarios}
+This section containts various scenarios regarding operations between \serverside and \clientside, with focus on the \serverside.
+
+%
+% SCENARIO
+%
+\begin{table}[h!]
+\tabulinesep=1.5mm
+\begin{tabu} to \linewidth {p{2.9cm} X}
+	\tabucline[1.5pt]-
+	\textit{Scenario name} & \underline{bobStartsNewStudyConfiguration} \\
+	\hline
+	\textit{Participating actor \newline instances} & \underline{bob:\researcher} \newline \underline{server:\serverside}
+	\newline \underline{client:\clientside} \\
+	\hline
+	\textit{Flow of events} &
+	\vspace{-3mm}
+	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item Bob the \researcher has to start a new research  and opens the client from \clientside. 
+		\item Bob logs into the client and navigates to the "Study Configuration" page. 
+		
+		\item Bob specify two reviewer and one validator and defines a research question based on some inclusion- and exclusion criteria to specify what papers should be returned. 
+		
+		\item Bob confirms his study configuration and sends the request to the server by pressing "ok".
+		
+		\item From the \serverside, the server extracts the information from the request and stores the information about the study configuration and the team roles.
+		
+		\item The server returns an overview of the study configuration to the client.
+	\end{enumerate} \\
+	\tabucline[1.5pt]-
+\end{tabu}
+\caption{Scenario when a user creates a new study configuration}
+\label{sc:bobStartsNewStudyConfiguration}
+\end{table}
+
+
+%
+% SCENARIO
+%
+\begin{table}[h!]
+	\tabulinesep=1.5mm
+	\begin{tabu} to \linewidth {p{2.9cm} X}
+		\tabucline[1.5pt]-
+		\textit{Scenario name} & \underline{ClientFilteringOperation} \\
+		\hline
+		\textit{Participating actor 
+		\newline instances} & \underline{server:\serverside}
+		\newline \underline{client:\clientside} \\
+		\hline
+		\textit{Flow of events} &
+		\vspace{-3mm}
+		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+			\item Server is receiving a request: Filtering keywords {Design pattern, 2005, A gang of four}
+			
+			\item Server validates clients authentication. User credential is accepted.
+			
+			\item The server measures all studies based on the given keywords.
+			
+			\item The server finds 20 studies and a list is formed. Each study element in the list contains data about it
+			
+			\item The server replies to the clients request by sending the article list of found articles.
+			
+			\item The server returns an overview of the study configuration to the client, 
+		\end{enumerate} \\
+		\tabucline[1.5pt]-
+	\end{tabu}
+		\caption{Scenario when a user sends a request with given filtering keywords.}
+		\label{sc:ClientFilteringOperation}
+\end{table}
+
+
+%
+% SCENARIO
+%
+\begin{table}[h!]
+	\tabulinesep=1.5mm
+	\begin{tabu} to \linewidth {p{2.9cm} X}
+		\tabucline[1.5pt]-
+		\textit{Scenario name} & \underline{ClientRequestWithInvalidUser} \\
+		\hline
+		\textit{Participating actor \newline instances} & 
+		\underline{bob:\invalidUser}
+		\newline \underline{server:\serverside}
+		\newline \underline{client:\clientside} \\
+		\hline
+		\textit{Flow of events} &
+		\vspace{-3mm}
+		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+			\item Server is receiving a request on task retrieval for bob which is an invalid user.
+			
+			\item Server validates clients authentication. 
+			
+			\item The given user from the client is not valid because it does not exist in database
+			
+			\item A response is sent to the client detailing why bob does not have access to the server. \\
+			
+		\end{enumerate} \\
+		\tabucline[1.5pt]-
+	\end{tabu}
+	\caption{Scenario when a invalid user is trying to get access to the server.}
+	\label{sc:ClientRequestWithInvalidUser}
+\end{table}
+
+%
+% SCENARIO
+%
+\begin{table}[h!]
+	\tabulinesep=1.5mm
+	\begin{tabu} to \linewidth {p{2.9cm} X}
+		\tabucline[1.5pt]-
+		\textit{Scenario name} & \underline{ClientGetsToManyRelevantPapers} \\
+		\hline
+		\textit{Participating actor \newline instances} & \underline{server:\serverside}
+		\newline \underline{client:\clientside} \\
+		\hline
+		\textit{Flow of events} &
+		\vspace{-3mm}
+		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+			\item Server is receiving a request: Search keywords {2001,2002,2003,2003,2004,2005,2005,2006,,2007}
+						
+			\item Server validates clients authentication. User credential is accepted
+			
+			\item The server measures all articles based on the keywords.
+			
+			\item The list containing papears exceeds 10.000 papers, and the exception ToManyHitsException was thrown.
+			
+			\item A response is sent to the client that there was too many papers returned.\\				
+		\end{enumerate} \\
+		\tabucline[1.5pt]-
+	\end{tabu}
+	\caption{Scenario when a user has requested to many papers during one request.}
+	\label{sc:ClientGetsToManyRelevantPapers}
+\end{table}
+
+
+%
+% SCENARIO 
+%
+\begin{table}[h!]
+	\tabulinesep=1.5mm
+	\begin{tabu} to \linewidth {p{2.9cm} X}
+		\tabucline[1.5pt]-
+		\textit{Scenario name} & \underline{ExcludingPapersAboutDesignPatterns} \\
+		\hline
+		\textit{Participating actor \newline instances} & \underline{server:\serverside}
+		\newline \underline{client:\clientside} \\
+		\hline
+		\textit{Flow of events} &
+		\vspace{-3mm}
+		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+			\item Server is receiving a request: Search keywords {Design pattern, 2005, A gang of four}, Excluding{AllNonAssignedArticles}.
+			
+			\item The Server validates clients authentication. User credential is accepted
+			
+			\item The server measures all papers based on the keywords.
+			
+			\item 10 relevant papers was found but 5 was excluded because of the exclusion criteria.
+			
+			\item A list with the remaining 5 papers is returned to the client\\				
+		\end{enumerate} \\
+		\tabucline[1.5pt]-
+	\end{tabu}
+	\caption{Scenario when a user wants to exclude some papers.}
+	\label{sc:ExcludingPapersAboutDesignPatterns}
+\end{table}
+
+
+%
+% SCENARIO SECTION END
+%
+
+
+
+\end{document}
