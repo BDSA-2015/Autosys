@@ -1,0 +1,81 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{tabu}
+\usepackage{enumitem}
+\usepackage{courier}
+\usepackage{xspace}
+\usepackage{calc}
+
+
+\begin{document}
+
+%
+% DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES
+%
+% ACTORS
+\newcommand{\client}{\texttt{SystematicReviewClient}\xspace}
+\newcommand{\server}{\texttt{StudyConfigurationServer}\xspace}
+\newcommand{\studyconfigui}{\texttt{StudyConfigurationUI}\xspace}
+\newcommand{\teammanagement}{\texttt{Team Management}\xspace}
+\newcommand{\researcher}{\texttt{Researcher}\xspace}
+\newcommand{\database}{\texttt{Database}\xspace}
+% ANALYSIS OBJECTS
+\newcommand{\incident}{\texttt{Incident}\xspace}
+% USE CASES
+\newcommand{\RetrieveStudyInformation}{\texttt{RetrieveStudyInformation}\xspace}
+\newcommand{\validateuser}{\texttt{ValidateUser}\xspace}
+
+
+%
+% USE CASE TEMPLATE
+%
+\begin{table}[h!]
+\tabulinesep=1.5mm
+\begin{tabu} to \linewidth {p{2.9cm} X}
+	\tabucline[1.5pt]-
+	\textit{Use case name} & \RetrieveStudyInformation \\
+	\hline
+	\textit{Participating actors} & Initiated by \researcher \newline Communicates with \server through \client \\
+	\hline
+	\textit{Flow of events} &
+	\vspace{-3mm}
+	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item The researcher logins into the Client
+		\item He/she activates the Manage Study module
+		\item The \researcher chooses to upload task data about a completed task.
+		\item The researcher specifies the study information he/she wishes to retrieve
+		item The researcher confirms he/she wants to retrieve details regarding the Study
+		\item The message is sent to the server where the senders credentials are checked in the database. If he has access, then precede otherwise a statement I sent to the client detailing why he was rejected access.
+		\begin{itemize} 
+			\item There exist a entry which matches the search criteria, then continue 
+			\item There is no entry which matches the search criteria and an error message will be sent to the client.
+		\end{itemize}
+				
+	\end{enumerate} \\
+	\hline
+	\textit{Entry condition} &
+	\vspace{-3mm}
+	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item The \researcher logs into the \client and is connected to the internet.
+	\end{itemize} \\
+	\hline
+	\textit{Exit conditions} &
+	\vspace{-3mm}
+	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item The client has received an data entry detailing a Study or
+		\item The client has received an error message.
+	\end{itemize} \\
+	\hline
+	\textit{Quality \newline requirements} &
+	\vspace{-3mm}
+	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item From the researcher has confirmed he wants to retrieve the Study data,  he should wait no more than 30 seconds (Given he/she is connected to a stable internet with a reasonable transfer time)
+	\end{itemize} \\
+	\tabucline[1.5pt]-
+\end{tabu}
+\caption{Use case: RetrieveStudyInformation}
+\label{uc:RetrieveStudyInformation}
+\end{table}
+
+\end{document}
