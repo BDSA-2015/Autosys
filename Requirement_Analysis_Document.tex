@@ -1,0 +1,32 @@
+\documentclass[]{article}
+\usepackage{fullpage}
+\usepackage{tabu}
+\usepackage{enumitem}
+\usepackage{courier}
+\usepackage{xspace}
+\usepackage{calc}
+\usepackage{pdfpages}
+
+%opening
+\title{Requirement Analysis Document}
+\author{William Diedrichsen Marstrand, Dennis Thinh Tan Nguyen, \\Jacob Mullit Møiniche, Thor Valentin Olesen}
+
+\begin{document}
+
+\maketitle
+
+\input{Introduction.tex}
+\input{currentSystem.tex}
+\input{Proposed_System.tex}
+
+\begin{section}{System Models}
+\input{Scenarios.tex}
+\includepdf{UseCaseDiagram.pdf}
+
+\input{ManageStudyUseCase.tex}
+\input{storeTaskDataUseCase.tex}
+\input{RetrieveStudyInformationUseCase.tex}
+\input{ExportProtocolUseCase.tex}
+\end{section}
+
+\end{document}
