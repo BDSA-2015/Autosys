@@ -1,3 +1,5 @@
+\documentclass{article}
+\begin{document}
 %
 % DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES
 %
@@ -51,6 +53,7 @@
 		
 				\setlength{\itemindent}{2cm}
 				\item \parbox[t]{\linewidth-\itemindent}{The \studyConfigServer invokes the \validateUser use case to validiate access rights for the \user of the \request\\}
+				}
 			
 				\setlength{\itemindent}{2cm}
 				\item \parbox[t]{\linewidth-\itemindent}{The \studyConfigServer can either accept or reject the \user. If \user is rejected an \errorMessage regarding this will be returned to the \studyConfigUI. If the \user is accepted the \request will proceed.\\ }
@@ -58,10 +61,10 @@
 			
 				\setlength{\itemindent}{2cm}
 				\item \parbox[t]{\linewidth-\itemindent}{The \studyConfigServer invoke the \storeUser use case to update the \role for each \user which was specified in the \studyConfigUI. The \studyConfigServer will also invoke the \storeStudy, \storeTask use cases to save the study and the tasks for each \user.\\  }
-		}\newline
+		\newline{
 		
-	\item The \studyConfigServer returns an overview of the \studycon to the \studyConfigUI, which the \researcher can use to review if everything has been set up right.
-			
+	\item {The \studyConfigServer returns an overview of the \studycon to the \studyConfigUI, which the \researcher can use to review if everything has been set up right.}
+			}\newline
 					
 	
 
@@ -93,3 +96,4 @@
 \caption{Use case when a \researcher wants to create a new study through the \studyConfigUI}
 \label{uc:manageStudy}
 \end{table}
+\end{document}
