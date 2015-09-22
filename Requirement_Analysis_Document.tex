@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass{article}
 \usepackage{fullpage}
 \usepackage{tabu}
 \usepackage{enumitem}
@@ -6,23 +6,24 @@
 \usepackage{xspace}
 \usepackage{calc}
 \usepackage{pdfpages}
+\usepackage{float}
+\usepackage{graphicx}
 
-%opening
-\title{Requirement Analysis Document}
-\author{William Diedrichsen Marstrand, Dennis Thinh Tan Nguyen, \\Jacob Mullit Møiniche, Thor Valentin Olesen}
+\title{Requirement Analysis Document - Yellow Project}
+\author{William Diedrichsen Marstrand, Dennis Thinh Tan Nguyen, 
+\\Jacob Mullit Møiniche, Thor Valentin Olesen}
 
 \begin{document}
 
 \maketitle
 
-\input{Introduction.tex}
-\input{currentSystem.tex}
-\input{Proposed_System.tex}
+\input{section/Introduction}
+\input{section/currentSystem}
+\input{section/Proposed_System}
+\input{section/Scenarios} % Problem here
+\input{section/UseCase}
+\input{section/Glossary}
 
-\
-
-\input{Glossary.tex}
-
-
+%\includepdf[pages=-]{section/UseCaseDiagram.pdf}
 
 \end{document}

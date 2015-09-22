@@ -1,9 +1,7 @@
 
+\section{Scenarios}
 
-\subsection{Scenarios}
-%
 % DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES FOR SCENARIOS
-%
 % ACTORS
 \newcommand{\researcher}{\texttt{Researcher}\xspace}
 \newcommand{\clientside}{\texttt{StudyConfigurationUI}\xspace}
@@ -16,13 +14,13 @@
 \newcommand{\openincident}{\texttt{OpenIncident}\xspace}
 
 
-This section containts various scenarios regarding operations between \serverside and \clientside, with focus on the \serverside.
+This section contains various scenarios regarding operations between \serverside and \clientside, with focus on the \serverside.
 
-%
 % SCENARIO
-%
 \begin{table}[h!]
+
 \tabulinesep=1.5mm
+
 \begin{tabu} to \linewidth {p{2.9cm} X}
 	\tabucline[1.5pt]-
 	\textit{Scenario name} & \underline{bobStartsNewStudyConfiguration} \\
@@ -32,6 +30,7 @@ This section containts various scenarios regarding operations between \serversid
 	\hline
 	\textit{Flow of events} &
 	\vspace{-3mm}
+	
 	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
 		\item Bob the \researcher has to start a new research  and opens the client from \clientside. 
 		\item Bob logs into the client and navigates to the "Study Configuration" page. 
@@ -43,20 +42,25 @@ This section containts various scenarios regarding operations between \serversid
 		\item From the \serverside, the server extracts the information from the request and stores the information about the study configuration and the team roles.
 		
 		\item The server returns an overview of the study configuration to the client.
-	\end{enumerate} \\
+	\end{enumerate} 
+	
+	\\
 	\tabucline[1.5pt]-
+	
 \end{tabu}
+
 \caption{Scenario when a user creates a new study configuration}
 \label{sc:bobStartsNewStudyConfiguration}
+
 \end{table}
 
-
-%
 % SCENARIO
-%
 \begin{table}[h!]
+
 	\tabulinesep=1.5mm
+	
 	\begin{tabu} to \linewidth {p{2.9cm} X}
+	
 		\tabucline[1.5pt]-
 		\textit{Scenario name} & \underline{ClientFilteringOperation} \\
 		\hline
@@ -66,7 +70,9 @@ This section containts various scenarios regarding operations between \serversid
 		\hline
 		\textit{Flow of events} &
 		\vspace{-3mm}
+		
 		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		
 			\item Server is receiving a request: Filtering keywords {Design pattern, 2005, A gang of four}
 			
 			\item Server validates clients authentication. User credential is accepted.
@@ -78,20 +84,25 @@ This section containts various scenarios regarding operations between \serversid
 			\item The server replies to the clients request by sending the article list of found articles.
 			
 			\item The server returns an overview of the study configuration to the client, 
-		\end{enumerate} \\
+		
+		\end{enumerate} 
+		
+		\\
 		\tabucline[1.5pt]-
+		
 	\end{tabu}
 		\caption{Scenario when a user sends a request with given filtering keywords.}
 		\label{sc:ClientFilteringOperation}
+		
 \end{table}
 
-
-%
 % SCENARIO
-%
 \begin{table}[h!]
+
 	\tabulinesep=1.5mm
+	
 	\begin{tabu} to \linewidth {p{2.9cm} X}
+	
 		\tabucline[1.5pt]-
 		\textit{Scenario name} & \underline{ClientRequestWithInvalidUser} \\
 		\hline
@@ -102,7 +113,9 @@ This section containts various scenarios regarding operations between \serversid
 		\hline
 		\textit{Flow of events} &
 		\vspace{-3mm}
+		
 		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		
 			\item Server is receiving a request on task retrieval for bob which is an invalid user.
 			
 			\item Server validates clients authentication. 
@@ -113,17 +126,20 @@ This section containts various scenarios regarding operations between \serversid
 			
 		\end{enumerate} \\
 		\tabucline[1.5pt]-
+		
 	\end{tabu}
 	\caption{Scenario when a invalid user is trying to get access to the server.}
 	\label{sc:ClientRequestWithInvalidUser}
+	
 \end{table}
 
-%
 % SCENARIO
-%
 \begin{table}[h!]
+
 	\tabulinesep=1.5mm
+	
 	\begin{tabu} to \linewidth {p{2.9cm} X}
+	
 		\tabucline[1.5pt]-
 		\textit{Scenario name} & \underline{ClientGetsToManyRelevantPapers} \\
 		\hline
@@ -132,7 +148,9 @@ This section containts various scenarios regarding operations between \serversid
 		\hline
 		\textit{Flow of events} &
 		\vspace{-3mm}
+		
 		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		
 			\item Server is receiving a request: Search keywords {2001,2002,2003,2003,2004,2005,2005,2006,,2007}
 						
 			\item Server validates clients authentication. User credential is accepted
@@ -141,12 +159,18 @@ This section containts various scenarios regarding operations between \serversid
 			
 			\item The list containing papears exceeds 10.000 papers, and the exception ToManyHitsException was thrown.
 			
-			\item A response is sent to the client that there was too many papers returned.\\				
+			\item A response is sent to the client that there was too many papers returned.
+			\item \\
+						
 		\end{enumerate} \\
+		
 		\tabucline[1.5pt]-
+		
 	\end{tabu}
+	
 	\caption{Scenario when a user has requested to many papers during one request.}
 	\label{sc:ClientGetsToManyRelevantPapers}
+	
 \end{table}
 
 
@@ -154,8 +178,11 @@ This section containts various scenarios regarding operations between \serversid
 % SCENARIO 
 %
 \begin{table}[h!]
+
 	\tabulinesep=1.5mm
+	
 	\begin{tabu} to \linewidth {p{2.9cm} X}
+	
 		\tabucline[1.5pt]-
 		\textit{Scenario name} & \underline{ExcludingPapersAboutDesignPatterns} \\
 		\hline
@@ -164,7 +191,9 @@ This section containts various scenarios regarding operations between \serversid
 		\hline
 		\textit{Flow of events} &
 		\vspace{-3mm}
+		
 		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		
 			\item Server is receiving a request: Search keywords {Design pattern, 2005, A gang of four}, Excluding{AllNonAssignedArticles}.
 			
 			\item The Server validates clients authentication. User credential is accepted
@@ -175,10 +204,13 @@ This section containts various scenarios regarding operations between \serversid
 			
 			\item A list with the remaining 5 papers is returned to the client\\				
 		\end{enumerate} \\
+		
 		\tabucline[1.5pt]-
+		
 	\end{tabu}
+	
 	\caption{Scenario when a user wants to exclude some papers.}
 	\label{sc:ExcludingPapersAboutDesignPatterns}
+	
 \end{table}
 
-\end{subsection}

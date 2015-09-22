@@ -1,27 +1,29 @@
-\begin{section}{Current System}
+\section{Current System}
 
 The current is a Excel based application which facilitates searches on academic topic. The system does not contain the articles, but data regarding the articles content. 
 The system support multiple users to contribute data and makes it possible to identify if another user is contributing data on the same article. The Data contributed is mostly keywords, which makes it easier to search and compare articles. 
-To search for articles, a user must submit keywords, which the articles will be ranked after. Articles are also ranked after the amount of keywords they have in common with other articles. \\\\The current system can work, but become increasingly hard to manage. Therefor a new system which solves the negatives while keeping all of the functionality the system already support is recommended. This can be done with a separation of the data and the user interface, by creating a dedicated database and a dedicated user interface. This will ensure that new functionality will not be limited by the database structure. \\
-\\The negatives and pros of the current system is shown below:
-\begin{subsubsection}{Pros of current system}
+To search for articles, a user must submit keywords, which the articles will be ranked after. Articles are also ranked after the amount of keywords they have in common with other articles. 
+\\\\
+The current system can work, but become increasingly hard to manage. Therefor a new system which solves the negatives while keeping all of the functionality the system already support is recommended. This can be done with a separation of the data and the user interface, by creating a dedicated database and a dedicated user interface. This will ensure that new functionality will not be limited by the database structure. 
+\\\\
+The negatives and pros of the current system are described below:
+
+\subsection{Pros of current system}
 The systems pros are as following:
+
 \begin{enumerate}
 	\item Excel licenses are cheap and is widely used by customer base
 	\item Its simple and easy to augment and implement changes.
 	\item If the excel files are Read Only, then data the is safe from hostile users.
 	\item It's easy to implement version control via systems Git or other systems.
 \end{enumerate}
-\end{subsubsection}
 
-\begin{subsubsection}{Negatives of current system} 
+\subsection{Negatives of current system} 
 And the systems Negatives are as following: 
+
 \begin{enumerate}
 	\item The data structures can be hard to manage, especially as the system grows in scope and content.
 	\item The system does not support multiple users editing the same files at the same time.
 	\item The system interface leaves a lot to be desired.
 	\item New features becomes hard to implement as the systems grow.
 \end{enumerate}
-\end{subsubsection}
-
-\end{section}
