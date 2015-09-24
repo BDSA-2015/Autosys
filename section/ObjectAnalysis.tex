@@ -7,23 +7,60 @@
 
 \begin{document}
 \section{Object Analysis Model}
+
+% BOUNDARY 
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{}lll@{}}
+\toprule
+Boundary Object & Attributes \& Associations & Definition \\ \midrule
+Client & & The main user of the program. Researcher is a person who envokes the manageStudy use case. \\
+SystematicReviewClient & & Part of the client that is apart of the system, but is out of our scope. \\
+StudyConfigurationUI & & A user interface where a user can create or manage a study configuration. \\ 
+StudySearchUI & & A component which fascilitates the search in studies based on keywords. \\
+StudyConfigurationServer & studyData, roles & Manages access to data. \\ 
+StudyErrorUI & & A pop up window detailing critical errors. e.g. the user credentials are wrong. \\
+
+         
+\bottomrule
+\end{tabular}
+}
+\caption{Boundaries}
+\label{my-label}
+\end{table}
+
+% ENTITIES 
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{
 \begin{tabular}{@{}lll@{}}
 \toprule
 Entity Object & Attributes \& Associations & Definition \\ \midrule
-    Researcher          &                            &    The main user of the program. Researcher is a person who envokes
-     the manageStudy use case. \\
-      SystematicReviewClient       &                            &   Part of the client that is apart of the sytem, but is out of our scope.         \\
-         StudyConfigurationUI     &                            & Is a user interface where a user can create or manage a study configuration         \\ 
-         
-         \bottomrule
+Researcher & Privileges, Role, Tasks, Phases, Groups, Login Credentials & Researcher is a person who envokes the manageStudy use case. \\
+Study & Tags, initiator, collaborators, timespan & A study is a systematic research report. \\ 
+Task & & A task is comprised of several subtasks assigned through roles. E.g. a "validator" may have a task comparing papers that do not match. where a set of studies is analyzed by e.g. a validator. \\ 
+Request & SearchKeywords, inclusion/exclusion criteria, owner, & The request represents the research question in a study and is defined by its keywords. \\
+Protocol & & Rules that determine how the client works on data. \\
+\bottomrule
 \end{tabular}
 }
-\caption{My caption}
+\caption{Entities}
 \label{my-label}
 \end{table}
 
+% CONTROL (INTERACTOR)
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{}lll@{}}
+\toprule
+
+\bottomrule
+\end{tabular}
+}
+\caption{Controls}
+\label{my-label}
+\end{table}
 
 \end{document}
