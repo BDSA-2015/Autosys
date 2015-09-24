@@ -1,36 +1,9 @@
-\documentclass{article}
-\begin{document}
-%
-% DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES
-%
-% ACTORS
-\newcommand{\researcher}{\texttt{Researcher}\xspace}
-\newcommand{\client}{\texttt{SystematicReviewClient}\xspace}
-\newcommand{\studyConfigUI}{\texttt{StudyConfigurationUI}\xspace}
-\newcommand{\studyConfigServer}{\texttt{StudyConfigurationServer}\xspace}
-\newcommand{\teamManage}{\texttt{TeamManange}\xspace}
-% ANALYSIS OBJECTS
-\newcommand{\user}{\texttt{User}\xspace}
-\newcommand{\role}{\texttt{Role}\xspace}
-\newcommand{\studycon}{\texttt{StudyConfiguration}\xspace}
-\newcommand{\errorMessage}{\texttt{ErrorMessage}\xspace}
-\newcommand{\request}{\texttt{Request}\xspace}
-\newcommand{\task}{\texttt{Task}\xspace}
-% USE CASES
-\newcommand{\manageStudy}{\texttt{ManageStudy}}
-\newcommand{\manageClassCrit}{\texttt{ManageClassificationCriteria}\xspace}
-\newcommand{\manageRole}{\texttt{ManageRole}\xspace}
-\newcommand{\manageInExCrit}{\texttt{ManageInclusionAndExclusionCriteria}\xspace}
-\newcommand{\validateUser}{\texttt{ValidateUser}\xspace}
-\newcommand{\storeUser}{\texttt{StoreUserData}\xspace}
-\newcommand{\storeStudy}{\texttt{StoreStudyData}\xspace}
-\newcommand{\storeTask}{\texttt{StoreTaskData}\xspace}
-\newcommand{\manageTask}{\texttt{ManageTask}\xspace}
+
 
 %
 % USE CASE TEMPLATE
 %
-\begin{table}[h!]
+\begin{table}[H]
 \tabulinesep =1.5mm
 \begin{tabu} to \linewidth {p{2.9cm} X}
 	\tabucline[1.5pt]-
@@ -91,9 +64,7 @@
 	\item The \researcher receives an \errorMessage within 5 seconds if the \request is rejected.
 \end{itemize} \\
 \tabucline[1.5pt]-
-
 \textsl{}\end{tabu}
 \caption{Use case when a \researcher wants to create a new study through the \studyConfigUI}
 \label{uc:manageStudy}
 \end{table}
-\end{document}
