@@ -10,26 +10,25 @@
 	\tabucline[1.5pt]-
 	\textit{Use case name} & \exportprotocol \\
 	\hline
-	\textit{Participating actors} & Initiated by \researcher \newline Communicates with \server through \client \\
+	\textit{Participating actors} & Initiated by \client \newline Communicates with \server \\
 	\hline
 	\textit{Flow of events} &
 	\vspace{-3mm}
 	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \researcher logs into the program using the \client login UI.
-		\item The \researcher uses the \client options for choosing a specific study.
+		\item The \client sends a request for a specific study.
 			\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \client presents different possibilities for getting data from the \server.}
+				\item  \parbox[t]{\linewidth-\itemindent}{The \server validates the request and answers by sending back the relevant data.}
 			}\newline
-		\item The \researcher chooses to export a research protocol from the study.
+		\item The \client requests a research protocol from the study.
 			\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \server receives the request and makes a validation of the \researcher user account(use case: \validateuser).}
+				\item \parbox[t]{\linewidth-\itemindent}{The \server receives the request and makes a validation of the \researcher user account.}
 				}\newline{
 				\setlength{\itemindent}{2cm}
 				\item \parbox[t]{\linewidth-\itemindent}{ The \server exports the requested research protocol to the \researcher.}
 				\newline
-		\item The \client visualizes the research protocol to the \researcher.
+		\item The \client receives the research protocol.
 		}
 			\newline
 	\end{enumerate} \\
@@ -37,21 +36,20 @@
 	\textit{Entry condition} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \researcher logs into the \client.
+		\item The \client is logged in and connected to the internet.
 	\end{itemize} \\
 	\hline
 	\textit{Exit conditions} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \client has received an acknowledgment and the selected response from the \server and presented it for the \researcher, OR
-		\item The \client has received an explanation indicating why the transaction could not be processed and presented it for the \researcher.
+		\item The \client has received the selected data from the \server
 	\end{itemize} \\
 	\hline
 	\textit{Quality \newline requirements} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \researcher's request is acknowledged within 10 seconds.
-		\item The selected response to the \client arrives no later than 40 seconds after the request was received by the \server.
+		\item The \client's request is received by the \server within 10 seconds.
+		\item The \client  starts receiving the study report no later than 40 seconds after it has been requested.
 	\end{itemize} \\
 	\tabucline[1.5pt]-
 \end{tabu}
