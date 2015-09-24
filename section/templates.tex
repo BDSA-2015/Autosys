@@ -1,0 +1,102 @@
+\section{Template}
+\maketitle
+
+%
+% DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES
+%
+% ACTORS
+\newcommand{\fieldofficer}{\texttt{FieldOfficer}\xspace}
+\newcommand{\dispatcher}{\texttt{Dispatcher}\xspace}
+% ANALYSIS OBJECTS
+\newcommand{\incident}{\texttt{Incident}\xspace}
+% USE CASES
+\newcommand{\reportemergency}{\texttt{ReportEmergency}\xspace}
+\newcommand{\openincident}{\texttt{OpenIncident}\xspace}
+
+\section{Scenario Template}
+Table~\ref{sc:warehouseOnFire} shows an example scenario taken from the OOSE book on page 127. It shows how to format a scenario using \LaTeX. We recommend using the package `fullpage` so that more space is available within the flow of events. For the formatting of actors, analysis objects, and use cases we recommend defining new commands, as shown in this template, so you can easily reference and change them from a central location. Also note how `\textbackslash ref\{\}' is used to reference the table from within this paragraph.
+
+%
+% SCENARIO TEMPLATE
+%
+\begin{table}[h!]
+\tabulinesep=1.5mm
+\begin{tabu} to \linewidth {p{2.9cm} X}
+	\tabucline[1.5pt]-
+	\textit{Scenario name} & \underline{warehouseOnFire} \\
+	\hline
+	\textit{Participating actor \newline instances} & \underline{bob, alice:\fieldofficer} \newline \underline{john:\dispatcher} \\
+	\hline
+	\textit{Flow of events} &
+	\vspace{-3mm}
+	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item Bob, driving down main street in his patrol car, notices smoke coming out of a warehouse. His partner, Alice, activates the ``Report Emergency'' function from her FRIEND laptop.
+		\item Alice enters the address of the building, a brief description of its location (i.e., northwest corner), and an emergency level. In addition to a fire unit, she requests several paramedic units on the scene, given that the area appears to be relatively busy. She confirms her input and waits for an acknowledgment.
+		\item John, the \dispatcher, is alerted to the emergency by a beep of his workstation. He reviews the information submitted by Alice and acknowledges the report. He allocates a fire unit and two paramedic units to the \incident site and sends their estimated arrival time (ETA) to Alice.
+		\item Alice receives the acknowledgment and the ETA.
+	\end{enumerate} \\
+	\tabucline[1.5pt]-
+\end{tabu}
+\caption{Example of a scenario. (p127 in OOSE)}
+\label{sc:warehouseOnFire}
+\end{table}
+
+\clearpage
+\section{Use Case Template}
+Table~\ref{uc:reportEmergency} demonstrates the more complicated formatting required to create use case descriptions. The example is taken from the OOSE book on page 129. Notice that system responses are indented to easily distinguish them from actor actions. This template should get you going, but we might provide you with one requiring less boiler plate code later on.
+
+%
+% USE CASE TEMPLATE
+%
+\begin{table}[h!]
+\tabulinesep=1.5mm
+\begin{tabu} to \linewidth {p{2.9cm} X}
+	\tabucline[1.5pt]-
+	\textit{Use case name} & \reportemergency \\
+	\hline
+	\textit{Participating actors} & Initiated by \fieldofficer \newline Communicates with \dispatcher \\
+	\hline
+	\textit{Flow of events} &
+	\vspace{-3mm}
+	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item The \fieldofficer activates the ``Report Emergency'' function of her terminal.
+			\newline{
+				\setlength{\itemindent}{2cm}
+				\item \parbox[t]{\linewidth-\itemindent}{FRIEND responds by presenting a form to the \fieldofficer.}
+			}\newline
+		\item The \fieldofficer completes the form by selecting the emergency level, type, location, and brief description of the situation. The \fieldofficer also describes possible responses to the emergency situation. Once the form is completed, the \fieldofficer submits the form.
+			\newline{
+				\setlength{\itemindent}{2cm}
+				\item \parbox[t]{\linewidth-\itemindent}{FRIEND receives the form and notifies the \dispatcher.}
+			}\newline
+		\item The \dispatcher reviews the submitted information and creates an \incident in the database by invoking the \openincident use case. The \dispatcher selects a response and acknowledges the report.
+			\newline{
+				\setlength{\itemindent}{2cm}
+				\item \parbox[t]{\linewidth-\itemindent}{FRIEND displays the acknowledgment and the selected response to the \fieldofficer.}
+			}\newline
+	\end{enumerate} \\
+	\hline
+	\textit{Entry condition} &
+	\vspace{-3mm}
+	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item The \fieldofficer is logged into FRIEND.
+	\end{itemize} \\
+	\hline
+	\textit{Exit conditions} &
+	\vspace{-3mm}
+	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item The \fieldofficer has received an acknowledgment and the selected response from the \dispatcher, OR
+		\item The \fieldofficer has received an explanation indicating why the transaction could not be processed.
+	\end{itemize} \\
+	\hline
+	\textit{Quality \newline requirements} &
+	\vspace{-3mm}
+	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+		\item The \fieldofficer's report is acknowledged within 30 seconds.
+		\item The selected response arrives no later than 30 seconds after it is sent by the \dispatcher.
+	\end{itemize} \\
+	\tabucline[1.5pt]-
+\end{tabu}
+\caption{Example of a use case. (p129 in OOSE)}
+\label{uc:reportEmergency}
+\end{table}

@@ -1,4 +1,4 @@
-\documentclass{article}
+	\documentclass{article}
 \usepackage{fullpage}
 \usepackage{tabu}
 \usepackage{enumitem}
@@ -8,21 +8,86 @@
 \usepackage{pdfpages}
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{makecell,interfaces-makecell}
+
+
+
+
+
+%
+% DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES
+%
+% ACTORS
+\newcommand{\client}{\texttt{SystematicReviewClient}\xspace}
+
+\newcommand{\studyConfigUI}{\texttt{StudyConfigurationUI}\xspace}
+\newcommand{\configUI}{\texttt{StudyConfigurationUI}\xspace}
+
+\newcommand{\studyConfigServer}{\texttt{StudyConfigurationServer}\xspace}
+\newcommand{\serverside}{\texttt{Study Configuration Server}\xspace}
+
+\newcommand{\clientside}{\texttt{Study Review UI}\xspace}
+
+\newcommand{\teamManage}{\texttt{TeamManange}\xspace}
+
+\newcommand{\researcher}{\texttt{Researcher}\xspace}
+
+\newcommand{\system}{\texttt{AutoSys System}\xspace}
+
+
+
+% ANALYSIS OBJECTS
+\newcommand{\role}{\texttt{Role}\xspace}
+\newcommand{\studycon}{\texttt{StudyConfiguration}\xspace}
+\newcommand{\errorMessage}{\texttt{ErrorMessage}\xspace}
+\newcommand{\request}{\texttt{Request}\xspace}
+\newcommand{\task}{\texttt{Task}\xspace}
+\newcommand{\studyconfig}{\texttt{Study Configuration }\xspace}
+\newcommand{\user}{\texttt{User}\xspace}
+
+% USE CASES
+\newcommand{\manageStudy}{\texttt{ManageStudy}}
+\newcommand{\manageClassCrit}{\texttt{ManageClassificationCriteria}\xspace}
+\newcommand{\manageRole}{\texttt{ManageRole}\xspace}
+\newcommand{\manageInExCrit}{\texttt{ManageInclusionAndExclusionCriteria}\xspace}
+\newcommand{\validateUser}{\texttt{ValidateUser}\xspace}
+\newcommand{\storeUser}{\texttt{StoreUserData}\xspace}
+\newcommand{\storeStudy}{\texttt{StoreStudyData}\xspace}
+\newcommand{\storeTask}{\texttt{StoreTaskData}\xspace}
+\newcommand{\manageTask}{\texttt{ManageTask}\xspace}
+\newcommand{\exportprotocol}{\texttt{ExportProtocol}\xspace}
+\newcommand{\storetaskdata}{\texttt{StoreTaskData}\xspace}
+\newcommand{\validateuser}{\texttt{ValidateUser}\xspace}
+\newcommand{\RetrieveStudyInformation}{\texttt{RetrieveStudyInformation}\xspace}
+
+%
+% DEFINE ACTORS, ANALYSIS OBJECTS, AND USE CASES FOR SCENARIOS
+%
+% ACTORS
+
+% ANALYSIS OBJECTS
+
+
+
 
 \title{Requirement Analysis Document - Yellow Project}
 \author{William Diedrichsen Marstrand, Dennis Thinh Tan Nguyen, 
 \\Jacob Mullit Møiniche, Thor Valentin Olesen}
 
+
+
+
+
 \begin{document}
 
 \maketitle
 
-\input{section/Introduction}
-\input{section/currentSystem}
-\input{section/Proposed_System}
-\input{section/Scenarios}
-\input{section/UseCase}
-\input{section/Glossary}
+\include{section/Introduction}
+\include{section/currentSystem}
+\include{section/Proposed_System}
+\include{section/Scenarios}
+\include{section/UseCase}
+\include{section/Glossary}
 
 %\includepdf[pages=-]{section/UseCaseDiagram.pdf}
 
