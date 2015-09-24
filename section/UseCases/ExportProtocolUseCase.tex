@@ -1,6 +1,3 @@
-
-
-
 %
 % USE CASE TEMPLATE
 %
@@ -10,7 +7,7 @@
 	\tabucline[1.5pt]-
 	\textit{Use case name} & \exportprotocol \\
 	\hline
-	\textit{Participating actors} & Initiated by \researcher \newline Communicates with \server through \client \\
+	\textit{Participating actors} & Initiated by \researcher \newline Communicates with \serverside through \client \\
 	\hline
 	\textit{Flow of events} &
 	\vspace{-3mm}
@@ -19,19 +16,17 @@
 		\item The \researcher uses the \client options for choosing a specific study.
 			\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \client presents different possibilities for getting data from the \server.}
+				\item \parbox[t]{\linewidth-\itemindent}{The \client presents different possibilities for getting data from the \serverside.}
 			}\newline
 		\item The \researcher chooses to export a research protocol from the study.
 			\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \server receives the request and makes a validation of the \researcher user account(use case: \validateuser).}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside receives the request and makes a validation of the \researcher user account(use case: \validateuser).}
 				}\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{ The \server exports the requested research protocol to the \researcher.}
-				\newline
+				\item \parbox[t]{\linewidth-\itemindent}{ The \serverside exports the requested research protocol to the \researcher.}\newline
 		\item The \client visualizes the research protocol to the \researcher.
-		}
-			\newline
+		}\newline
 	\end{enumerate} \\
 	\hline
 	\textit{Entry condition} &
@@ -43,7 +38,7 @@
 	\textit{Exit conditions} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \client has received an acknowledgment and the selected response from the \server and presented it for the \researcher, OR
+		\item The \client has received an acknowledgment and the selected response from the \serverside and presented it for the \researcher, OR
 		\item The \client has received an explanation indicating why the transaction could not be processed and presented it for the \researcher.
 	\end{itemize} \\
 	\hline
@@ -51,7 +46,7 @@
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
 		\item The \researcher's request is acknowledged within 10 seconds.
-		\item The selected response to the \client arrives no later than 40 seconds after the request was received by the \server.
+		\item The selected response to the \client arrives no later than 40 seconds after the request was received by the \serverside.
 	\end{itemize} \\
 	\tabucline[1.5pt]-
 \end{tabu}

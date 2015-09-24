@@ -7,7 +7,7 @@
 	\tabucline[1.5pt]-
 	\textit{Use case name} & \storetaskdata \\
 	\hline
-	\textit{Participating actors} & Initiated by \researcher \newline Communicates with \server through \client \\
+	\textit{Participating actors} & Initiated by \researcher \newline Communicates with \serverside through \client \\
 	\hline
 	\textit{Flow of events} &
 	\vspace{-3mm}
@@ -16,17 +16,17 @@
 		\item The \researcher uses the \client options for choosing a specific study.
 			\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \client presents different possibilities for interacting with the server. One of which is to deliver a completed task.}
+				\item \parbox[t]{\linewidth-\itemindent}{The \client presents different possibilities for interacting with the \serverside. One of which is to deliver a completed task.}
 			}\newline
 		\item The \researcher chooses to upload task data about a completed task.
 			\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \server receives the request and makes a validation of the \researcher user account(use case: \validateuser). The validation goes through because the \researcher uploading the completed task is the same as the one who received it in the first place.}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside receives the request and makes a validation of the \researcher user account(use case: \validateuser). The validation goes through because the \researcher uploading the completed task is the same as the one who received it in the first place.}
 				}\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{ The \server stores the data from the completed task in the \database. Then it sends back a respond to the \client letting it know, that the request was received and acknowledged.}
+				\item \parbox[t]{\linewidth-\itemindent}{ The \serverside stores the data from the completed task in the database. Then it sends back a respond to the \client letting it know, that the request was received and acknowledged.}
 				\newline
-		\item The \client receives the respond from the \server and responds to the \researcher.
+		\item The \client receives the respond from the \serverside and responds to the \researcher.
 		}
 			\newline
 	\end{enumerate} \\
@@ -40,7 +40,7 @@
 	\textit{Exit conditions} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \client has received an acknowledgment and the selected response from the \server and presented it for the \researcher, OR
+		\item The \client has received an acknowledgment and the selected response from the \serverside and presented it for the \researcher, OR
 		\item The \client has received an explanation indicating why the transaction could not be processed and presented it for the \researcher.
 	\end{itemize} \\
 	\hline
@@ -48,7 +48,7 @@
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
 		\item The \researcher's request is acknowledged within 10 seconds.
-		\item The selected response to the \client arrives no later than 40 seconds after the request was received by the \server.
+		\item The selected response to the \client arrives no later than 40 seconds after the request was received by the \serverside.
 	\end{itemize} \\
 	\tabucline[1.5pt]-
 \end{tabu}
