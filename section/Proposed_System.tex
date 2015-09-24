@@ -2,58 +2,51 @@
 
 \subsection{Overview}
 
-The system must be able to handle big amounts of data in the form of research papers and support tools for conducting Systematic Literature Reviews (SLR) to answer one ore more focused research questions and Systematic Mapping Studies(SMS) which uses key-wording to find relevant data.
+This section will describe the requirements of the system. In other words, it will clarify the purpose of the system with functional and non-functional requirements. The functional requirements will describe the services that the system should provide and how the system will behave. The non-functional requirements will describe the constraints of these services and are used to measure the quality of these. 
 
 \subsection{Functional Requirements}
 The system must support the following functional requirements:
 
 \begin{itemize}
-% The user must be able to store the data on an external database 
-\item Use of an external database for storing the data
-\item Defining the phases of a study
-\item Allowing creation and management of classification criteria for different studies
-\item Allowing creation and management of inclusion and exclusion criteria
-\item Configuration of future phases in a study
-\item Storing of information about delivered tasks
-\item Storing data about Users and Teams
-\item Filtering of research papers based on demographic information specified in a user request
-\item Screening of imported research papers resulting in an export of papers consisting of primary studies (set of relevant papers)
-\item A role engine which identifies user rights
-\item A viewer role
-\item A validator role
-\item Handling multiple client requests concurrently
-\item Storing quality ratings of research papers based on coverage according to specific research criteria
-\item Indexing of the research papers in the database for faster look up times
-\item Use of prepare statements on database queries to secure against malicious user input
-\item Storing common queries to speed up response time
-\item Extraction of data samples from specific studies for further validation by a validator role
-\item Generation of a research protocol
-\item Being able to export studies as plain data sets in different formats at the least the comma separated values(cvs) format
-\item Automatic system restart upon system failure
-\item The system must be complemented with an installation manual and a user manual
+\item The user must be able to define the phases of a study. 
+\item The user must be able to create and manage classification criteria for different studies.
+\item The user must be able to create and manage inclusion and exclusion criteria.
+\item The user must be able to configure future phases in a study.
+\item The user must be able to store information about delivered tasks.
+\item The user must be able to store data about Users and Teams.
+\item The user must be able to filter research papers based on demographic information specified by the user. 
+\item The user must be able to screen imported research papers. The result should be an export of papers consisting of primary studies (set of relevant papers). 
+\item The user should be able to export studies as plain data sets in different formats, e.g. as comma-separated-values(cvs) format. 
+\item The system should only accept tasks sent from the same user who received them in the first place. 
+\item The system should support a role engine which identifies user rights. Possible roles to be supported could be a "viewer" and "validator" role. 
+\item The system should be able to handle multiple client requests concurrently. 
+\item The system should be able to store quality ratings of research papers based on coverage according to specific research criteria.
+\item The system should be able to extract data samples from specific studies for further validation by a validator role.
+\item The system should be able to generate a research protocol that describes the rationale, objectives, design and methodology of the data and configuration of a study. 
+\item The system should restart automatically upon system failure.
+\item The system must be complemented with an installation manual and a user manual.
 \end{itemize}
 
 \subsection{Nonfunctional Requirements}
 The system must support the following nonfunctional requirements:
 
-\subsection{Usability}
+\subsubsection{Usability}
 
 \begin{itemize}
-\item The Users must be able to configure a study through the use of at most 3 application windows
-\item Users with no background in IT must be able to figure out and use the complete set of tools which the system provides
-\item The user manual must provide knowledge about the interfaces provided by the system
+\item The Users must be able to configure a study through the use of at most 3 application windows.
+\item Users with no background in IT should be able to understand the entire set of tools, which the system provides in approximately 30 minutes. 
+\item The user manual must provide knowledge about the interfaces provided by the system.
 \end{itemize}
 
-\subsection{Reliability}
+\subsubsection{Reliability}
 
 \begin{itemize}
-\item System restart upon system failure should be done within 30 seconds
-\item The system must always be available
-\item The system must only accept tasks send from the same user who received them in the first place
+\item System restart upon system failure should be done within 30 seconds.
+\item The system should strive to always be available. 
 \item The latest version of the system should always be available through a back up
 \end{itemize}
 
-\subsection{Performance}
+\subsubsection{Performance}
 
 \begin{itemize}
 \item The system should identify the role of a user and load the appropriate studies within 15 seconds
@@ -62,36 +55,38 @@ The system must support the following nonfunctional requirements:
 \item The system should support at least 200 users
 \end{itemize}
 
-\subsection{Supportability}
+\subsubsection{Supportability}
 
 \begin{itemize}
 \item The server is maintained by the supplier of the system
 \item The system must be fully functional independent of the other subpart of the complete system (the blue component)
-\item The type of server used to store the data should be a MySQL server
+% \item The type of server used to store the data should be a MySQL server
 \end{itemize}
 
-\subsection{Implementation}
+\subsubsection{Implementation}
 
 \begin{itemize}
-\item Be developed in C\# and WPF
-\item Data is stored on a MySQL database located on the same server.
+% \item Be developed in C\# and WPF
+% What's relevant to the client is just the platform of implementation, not the actual language.
+% \item Data fields in the database should support the types: String, Boolean, Enumeration,Tags, Resource
+% WAY TOO TECHNICAL 
 \item The system should run flawlessly on any Windows operating system newer than Windows XP
 \end{itemize}
 
-\subsection{Interface}
+\subsubsection{Interface}
 
 \begin{itemize}
 \item The system user interface for study configuration must at any time be replaceable by a newer version
 \end{itemize}
 
-\subsection{Packaging}
+\subsubsection{Packaging}
 
 \begin{itemize}
 \item The set up and installation of the server is done by the provider of the system independent of the client
 \item An employee with no prior knowledge about the system must be able to install and set up the server within a period of 15 min
 \end{itemize}
 
-\subsection{Legal}
+\subsubsection{Legal}
 
 \begin{itemize}
 \item The system should be publishable as Open Source Software in accordance to the GNU General Public License v2.0
