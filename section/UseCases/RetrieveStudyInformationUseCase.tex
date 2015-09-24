@@ -18,15 +18,16 @@
 	\textit{Flow of events} &
 	\vspace{-3mm}
 	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item He/she activates the Manage Study module
-		\item The \client chooses to upload task data about a completed task.
-		\item The \client specifies the study information he/she wishes to retrieve
-		item The \client confirms he/she wants to retrieve details regarding the Study
-		\item The message is sent to the server where the senders credentials are checked in the database. If he has access, then precede otherwise a statement I sent to the \client detailing why he was rejected access.
-		\begin{itemize} 
-			\item There exist an entry which matches the search criteria, then continue 
-			\item There is no entry which matches the search criteria and an error message will be sent to the \client.
-		\end{itemize}
+		\item The \client activates the Manage Study module.
+		\item The \client uploads task data about a completed task.
+		\item The \client specifies the study information to retrieve.
+		\item The \client confirms the retrieval of details regarding the Study. \newline
+		\setlength{\itemindent}{2cm}
+				\item \parbox[t]{\linewidth-\itemindent}{The message is sent to the server where the senders credentials are validated in the database.}
+		\setlength{\itemindent}{2cm}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside sends back the study information}
+		\item The \client receives the requested study information.
+		
 				
 	\end{enumerate} \\
 	\hline
@@ -39,14 +40,13 @@
 	\textit{Exit conditions} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \client has received an data entry detailing a Study or
-		\item The \client has received an error message.
+		\item The \client has received the study information.
 	\end{itemize} \\
 	\hline
 	\textit{Quality \newline requirements} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item From the \client has confirmed he wants to retrieve the Study data,  he should wait no more than 30 seconds (Given he/she is connected to a stable internet with a reasonable transfer time)
+		\item The \client should receive the study information maximum 30 seconds after requesting them.
 	\end{itemize} \\
 	\tabucline[1.5pt]-
 \end{tabu}

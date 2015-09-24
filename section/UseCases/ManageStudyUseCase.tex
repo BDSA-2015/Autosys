@@ -7,56 +7,54 @@
 	\tabucline[1.5pt]-
 	\textit{Use case name} & \manageStudy \\
 	\hline
-	\textit{Participating actors} & Initiated by \researcher \newline Communicates with \client \\
+	\textit{Participating actors} & Initiated by \client \newline Communicates with \serverside \\
 	\hline
 	\textit{Flow of events} &
 	\vspace{-3mm}
 
 \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-	\item The \researcher opens \client, navigates to the \serverside page.\\
-	\item The \researcher invokes the \manageRole use case to define \role for each \user that are appart of the \studycon.\\
-	\item The \researcher invokes the \manageClassCrit use case to define classification criterias for the \studycon.\\
-	\item The \researcher invokes the \manageInExCrit use case to define  what to exclude or include to the \studycon.\\
-	\item The \researcher invokes the \manageTask use case to specify which \task a \user should have.\\
-	\item The \researcher reviews all changes made and submits the \studycon to the \serverside.	
+	\item The \client navigates to the \serverside page.\\
+	\item The \client invokes the \manageRole use case to define \role for each \user that are appart of the \studycon.\\
+	\item The \client invokes the \manageClassCrit use case to define classification criterias for the \studycon.\\
+	\item The \client invokes the \manageInExCrit use case to define  what to exclude or include to the \studycon.\\
+	\item The \client  invokes the \manageTask use case to specify which \task a \user should have.\\
+	\item The \client reviews all changes made and submits the \studycon to the \serverside.	
 		\newline{
 				\setlength{\itemindent}{2cm}
 				\item \parbox[t]{\linewidth-\itemindent}{The \serverside invokes the \validateUser use case to validiate access rights for the \user of the \request}
 				}
 			
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \serverside can either accept or reject the \user. If \user is rejected an \errorMessage regarding this will be returned to the \studyConfigUI. If the \user is accepted the \request will proceed.}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside accepts the \user and the \request proceeds.}
 		
 			
 				\setlength{\itemindent}{2cm}
 				\item \parbox[t]{\linewidth-\itemindent}{The \serverside invoke the \storeUser use case to update the \role for each \user which was specified in the \studyConfigUI. The \serverside will also invoke the \storeStudy, \storeTask use cases to save the study and the tasks for each \user.}
 		\newline{
-		\item {The \serverside returns an overview of the \studycon to the \studyConfigUI, which the \researcher can use to review if everything has been set up right.}
+		\item {The \serverside returns an overview of the \studycon to the client.}
 		}\newline	
 \end{enumerate}\\
 \hline
 \textit{Entry condition} &
 \vspace{-3mm}
 \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-	\item The \researcher has a new study to create.
+	\item The \client wants to create a new study.
 \end{itemize}\\
 \hline
 \textit{Exit conditions} &
 \vspace{-3mm}
 \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-	\item The \researcher has received a \studycon overview ,OR
-	\item The \researcher has received an explanation indicating why the \studycon could not be created.
+	\item The \client has received a \studycon overview
 \end{itemize}\\
 \hline
 \textit{Quality \newline requirements} &
 \vspace{-3mm}
 \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-	\item The \researcher receives the \studycon within 10 seconds.
-	\item The \researcher receives an \errorMessage within 5 seconds if the \request is rejected.
+	\item The \client's study is created within 10 sec.
 \end{itemize}\\
 \tabucline[1.5pt]-
 \textsl{}
 \end{tabu}
-\caption{Use case when a \researcher wants to create a new study through the \studyConfigUI}
+\caption{Use case when a \client wants to create a new study through the \studyConfigUI}
 \label{uc:manageStudy}
 \end{table}
