@@ -7,11 +7,7 @@
 	\tabucline[1.5pt]-
 	\textit{Use case name} & \exportprotocol \\
 	\hline
-<<<<<<< HEAD
-	\textit{Participating actors} & Initiated by \researcher \newline Communicates with \serverside through \client \\
-=======
-	\textit{Participating actors} & Initiated by \client \newline Communicates with \server \\
->>>>>>> origin/master
+	\textit{Participating actors} & Initiated by \client \newline Communicates with \serverside \\
 	\hline
 	\textit{Flow of events} &
 	\vspace{-3mm}
@@ -19,32 +15,19 @@
 		\item The \client sends a request for a specific study.
 			\newline{
 				\setlength{\itemindent}{2cm}
-<<<<<<< HEAD
-				\item \parbox[t]{\linewidth-\itemindent}{The \client presents different possibilities for getting data from the \serverside.}
-=======
-				\item  \parbox[t]{\linewidth-\itemindent}{The \server validates the request and answers by sending back the relevant data.}
->>>>>>> origin/master
+				\item  \parbox[t]{\linewidth-\itemindent}{The \serverside validates the request and answers by sending back the relevant data.}
 			}\newline
 		\item The \client requests a research protocol from the study.
 			\newline{
 				\setlength{\itemindent}{2cm}
-<<<<<<< HEAD
-				\item \parbox[t]{\linewidth-\itemindent}{The \serverside receives the request and makes a validation of the \researcher user account(use case: \validateuser).}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside receives the request and makes a validation of the \researcher user account.}
 				}\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{ The \serverside exports the requested research protocol to the \researcher.}\newline
-		\item The \client visualizes the research protocol to the \researcher.
-		}\newline
-=======
-				\item \parbox[t]{\linewidth-\itemindent}{The \server receives the request and makes a validation of the \researcher user account.}
-				}\newline{
-				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{ The \server exports the requested research protocol to the \researcher.}
+				\item \parbox[t]{\linewidth-\itemindent}{ The \serverside exports the requested research protocol to the \researcher.}
 				\newline
 		\item The \client receives the research protocol.
 		}
 			\newline
->>>>>>> origin/master
 	\end{enumerate} \\
 	\hline
 	\textit{Entry condition} &
@@ -56,24 +39,14 @@
 	\textit{Exit conditions} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-<<<<<<< HEAD
-		\item The \client has received an acknowledgment and the selected response from the \serverside and presented it for the \researcher, OR
-		\item The \client has received an explanation indicating why the transaction could not be processed and presented it for the \researcher.
-=======
-		\item The \client has received the selected data from the \server
->>>>>>> origin/master
+		\item The \client has received the selected data from the \serverside
 	\end{itemize} \\
 	\hline
 	\textit{Quality \newline requirements} &
 	\vspace{-3mm}
 	\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-<<<<<<< HEAD
-		\item The \researcher's request is acknowledged within 10 seconds.
-		\item The selected response to the \client arrives no later than 40 seconds after the request was received by the \serverside.
-=======
-		\item The \client's request is received by the \server within 10 seconds.
+		\item The \client's request is received by the \serverside within 10 seconds.
 		\item The \client  starts receiving the study report no later than 40 seconds after it has been requested.
->>>>>>> origin/master
 	\end{itemize} \\
 	\tabucline[1.5pt]-
 \end{tabu}
