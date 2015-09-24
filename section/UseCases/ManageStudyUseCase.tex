@@ -18,19 +18,18 @@
 	\item The \researcher invokes the \manageClassCrit use case to define classification criterias for the \studycon.\\
 	\item The \researcher invokes the \manageInExCrit use case to define  what to exclude or include to the \studycon.\\
 	\item The \researcher invokes the \manageTask use case to specify which \task a \user should have.\\
-	\item The \researcher reviews all changes made and submits the \studycon to the \serverside.\\	
-			
+	\item The \researcher reviews all changes made and submits the \studycon to the \serverside.	
 		\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \serverside invokes the \validateUser use case to validiate access rights for the \user of the \request\\}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside invokes the \validateUser use case to validiate access rights for the \user of the \request}
 				}
 			
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \serverside can either accept or reject the \user. If \user is rejected an \errorMessage regarding this will be returned to the \studyConfigUI. If the \user is accepted the \request will proceed.\\}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside can either accept or reject the \user. If \user is rejected an \errorMessage regarding this will be returned to the \studyConfigUI. If the \user is accepted the \request will proceed.}
 		
 			
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \serverside invoke the \storeUser use case to update the \role for each \user which was specified in the \studyConfigUI. The \serverside will also invoke the \storeStudy, \storeTask use cases to save the study and the tasks for each \user.\\}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside invoke the \storeUser use case to update the \role for each \user which was specified in the \studyConfigUI. The \serverside will also invoke the \storeStudy, \storeTask use cases to save the study and the tasks for each \user.}
 		\newline{
 		\item {The \serverside returns an overview of the \studycon to the \studyConfigUI, which the \researcher can use to review if everything has been set up right.}
 		}\newline	
