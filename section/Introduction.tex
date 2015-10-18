@@ -5,7 +5,7 @@
 Today, the amount of data has grown to a level where it is starting to challenge researchers who need to extract the best available research on a specific question. As a result, researchers apply systematic studies on big data sets where they exploit meta data to classify subsets with useful data. This requires smart data processing tools that can use meta data to narrow down relevant research data. The purpose of such a systematic review is to sum up the best available research on a specific question. This can be achieved by combining the results of several studies. In this regard, the system in this project is comprised of two parts, client and server side. Our system scope is restricted to the server side and shall support the configuration of summarized research data relevant to a given research question. 
 
 \subsection{Scope of the System}
-The server shall provide teams with tools to conduct secondary studies (SMS or SLR). It should support activities of planning and conducting a review distributed in a research team. The server shall make sure that all data is stored for use in setting up a study configuration requested by the client. The system should support .bibtex files as a minimum. Security matters (e.g. user authentication) are not taken into primary account due to the scope of the project. 
+The server shall provide teams with tools to conduct secondary studies (SMS or SLR). It should support activities of planning and conducting a review distributed in a research team. The server shall make sure that all data is stored for use in setting up a study configuration requested by the client. The system should be able to import information from a bibtex file to a database. The reason is we want to be able to populate our database with existing data. Security matters (e.g. user authentication) are not taken into primary account due to the scope of the project. 
 In order for the system to fulfill the previously described purpose, it has to support the tasks described in the "Proposed System" section. Among these, the system shall support management of distributed research systems to work on a study. The reviewers should be able to export data sets and filter them with inclusion and exclusion criteria. Finally, the system should allow specific sets of data to be reviewed and screened by specific members of a research team. 
 
 \subsection{Objectives and Success Criteria of the Project}
@@ -15,8 +15,12 @@ The system should be easy to deploy and install. It should include an installati
 
 	\begin{itemize}
 	  \item Systematic Studies: methodology used to sum up the best available research on a specific research question or topic.  
-	  \item Yellow system: server side also referred as "server"
-	  \item Blue system: client side also referred as "client" 
+	  \item Yellow system: server side also referred as "server". The main responsibility of the yellow system are to store, send, validate and manipulate data from the database and also configurate a study.
+	  \item Blue system: client side also referred as "client" The main responsibility of the blue system are to visualize data from the database according to the user's demands and manage teams.
+	  \item Study: Is a specific structured research area with insight of existing contributions.
+	  \item Stage: is a given set of review tasks. Each stage is dependent on each order and is completed in a fixed order.
+	  \item Review task: Is a task in a given study process. Such as defining research questions
+	  
 	\end{itemize}
 	
 \subsection{References}
