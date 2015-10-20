@@ -19,10 +19,16 @@ The system should be easy to deploy and install. It should include an installati
 	  \item Systematic Studies: methodology used to sum up the best available research on a specific research question or topic.  
 	  \item Yellow system: server side also referred as "server". The main responsibility of the yellow system are to store, send, validate and manipulate data from the database and also configurate a study.
 	  \item Blue system: client side also referred as "client" The main responsibility of the blue system are to visualize data from the database according to the user's demands and manage teams.
-	  \item Study: Is a specific structured research area with insight of existing contributions.
-	  \item Stage: is a given set of review tasks. Each stage is dependent on each order and is completed in a fixed order.
-	  \item Review task: Is a task in a given study process. Such as defining research questions
-	  
+	  \item Study: the whole work process from initiating a research to narrowing down relevant research evidence. A study consists of different phases where data is continuously synthesized and approved by users with different roles. The end result is a final set of primary studies used to clarify the research question. 
+	  \item Primary and Secondary study: secondary research is defined as an analysis and interpretation of primary research. The method of writing secondary research is to collect primary research that is relevant to a given topic and interpret what the primary research found.
+	  \item Phase (stage): is a given set of review tasks. Each phase is dependent on each other sequentially and is completed in a fixed order. Each phase details how task requests are handled and handed out. Optionally, a user role can proceed to the next phase even though other user roles have not finished the same phase yet (e.g. two concurrent review phases).
+	  \item Task: an assignment in a given phase in a study. A task is defined by a unique id, a set of visible data fields (unmodifiable), a set of requested data fields (modifiable) and a type. A taks type can either be  request to fill out data field(s) or a request to handle conflicting data field(s). By way of example, a phase could involve review tasks assigned for two reviewers. A validator could then analyze any inconsistencies between the work of both reviewers in a second phase.
+	  \item Review task: a given study process used for data extraction. The user 
+	  \item Validate task: a given study process. Such as validating any inconsistencies between the work of two Reviewers in a given phase. 
+	  \item Research Protocol: the rules on how a given study is configured (work flow).
+	  \item Study Configuration: the configuration of a given study. A study configuration involves defining the research question, phases, assigning a team for the study, choosing data fields and assigning roles for all team members. 
+	  \item Inclusion/Exclusion Criteria: criteria that is evaluated throughout the whole lifetime of a givne study. By way of example, a criteria could be whether the data is from later than 2005. The criteria is used along the way to synthesize the data. As opposed to the classification criteria that is only used in the end of the study. 
+	  \item Classification Criteria: classification criteria is used to group data fields in a given study. By way of example, one could classify two groups for the same set of primary studies. The classification criteria determines what one is looking for in the data. It is defined in the study configuration and is used in the end of a study upon data extraction. 
 	\end{itemize}
 	
 \subsection{References}
