@@ -5,7 +5,7 @@
 \tabulinesep =1.5mm
 \begin{tabu} to \linewidth {p{2.9cm} X}
 	\tabucline[1.5pt]-
-	\textit{Use case name} & \manageStudy \\
+	\textit{Use case name} & \manageStudy \, using:\, \manageClassCrit \\
 	\hline
 	\textit{Participating actors} & Initiated by \client \newline Communicates with \serverside \\
 	\hline
@@ -21,7 +21,7 @@
 	\item The \client reviews all changes made and submits the \studycon to the \serverside.	
 		\newline{
 				\setlength{\itemindent}{2cm}
-				\item \parbox[t]{\linewidth-\itemindent}{The \serverside invokes the \validateUser use case to validiate access rights for the \user of the \request}
+				\item \parbox[t]{\linewidth-\itemindent}{The \serverside invokes the \validateUser use case to validate access rights for the \user of the \request}
 				}
 			
 				\setlength{\itemindent}{2cm}
@@ -50,7 +50,7 @@
 \textit{Quality \newline requirements} &
 \vspace{-3mm}
 \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-	\item The \client's study is created within 10 sec.
+	\item The \client's study is created within 10 sec, after the server has received the request.
 \end{itemize}\\
 \tabucline[1.5pt]-
 \textsl{}

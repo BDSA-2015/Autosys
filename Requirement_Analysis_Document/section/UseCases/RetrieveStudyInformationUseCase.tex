@@ -11,16 +11,16 @@
 \tabulinesep=1.5mm
 \begin{tabu} to \linewidth {p{2.9cm} X}
 	\tabucline[1.5pt]-
-	\textit{Use case name} & \RetrieveStudyInformation \\
+	\textit{Use case name} & \RetrieveStudyInformation \,using:\, \manageStudy \\
 	\hline
 	\textit{Participating actors} & Initiated by \client \newline Communicates with \serverside \\
 	\hline
 	\textit{Flow of events} &
 	\vspace{-3mm}
 	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item The \client activates the Manage Study module.
+		\item The \client activates the Manage Study use case.
 		\item The \client specifies the study information to retrieve.
-		\item The \client confirms the retrieval of details regarding the Study. \newline
+		\item The \client confirms the retrieval of details regarding the Study. An error message is displayed if the provided data is insufficient  \newline
 		\setlength{\itemindent}{2cm}
 				\item \parbox[t]{\linewidth-\itemindent}{The message is sent to the server where the senders credentials are validated in the database.}
 		\setlength{\itemindent}{2cm}
