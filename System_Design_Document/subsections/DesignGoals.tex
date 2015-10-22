@@ -11,6 +11,11 @@ The end user may have a low level of computer expertise potentially resulting in
 Goal: the server and study configuration ui must be reliable, handle system failures and wrong user input.
 \\\\
 The server should handle system failures (e.g. exceptions or network failures). Due to the client-server architecture, it is important that the server can automatically reboot upon system failures. As a result, other clients can continuously access the server. Also, the server should ensure that incomplete data transfers are resumed in case of network failures. Further, the Study Configuration UI should handle invalid user input and ensure the input is only sent to the server when correct. Finally, the server should have a backup of the database in case of corruption. These decisions ensure that the work of the end user is handled properly and the server is available when needed. This design goal is a refinement of the non-functional requirement "high reliability" in Requirement Analysis Document (section 3.3.2).  
-\item \textit{Scalability in terms of the amount of users, teams, and roles}:
-\item \textit{High performance for data request processing time}: indexing in the database, 
+\item \textit{\bf{Scalability}}:
+\\
+Goal: The response time of the system must not degrade dramatically with the number of users and concurrent studies. 
+\\\\
+The system is used by multiple teams with several users working on different studies. The work carried out by these users could be done concurrently and so the system will have a big workload when multiple requests are send to the server. Since the users need the study data quickly to conduct their research, it will be cumbersome if the users have to wait for a long time to get the data. Because of this the system will have to make the data quickly accessible to the users. But still the system must do this in a way which takes memory into account, so it does not require to many database resources.
+
+\item \textit{\bf{High performance for data request processing time}}: indexing in the database
 \end{itemize}
