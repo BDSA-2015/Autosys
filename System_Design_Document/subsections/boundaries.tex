@@ -1,0 +1,57 @@
+\subsection{Boundaries}
+
+% Create table for boundary use cases
+
+\textit{\bf{Configuration Use Cases}} 
+\\
+The handling of the previously described persistent objects is described in the use cases in the Requirement Analysis Document. By way of example, a ResearchManager can create, modify, remove Users and assign roles for them. However, the handling of the User objects have not yet been described in the use case model so far, as these objects have been refined during system design. A ResearchManager can always create new users and set up teams. Teams and roles are only assigned when a new study is set up in the Study Configuration UI. Hence, two additional use cases are invoked by the \textbf{ResearchManager}, CreateUser and SetupTeam.
+\\
+
+\textbf{CreateUser}
+\\
+The ResearchManager creates a user, gives it a name and configures the role of the user also determining which resources are accessible. Optionally, one may choose between selecting a persistent storage subsystem of a database or a bibtex file. 
+\\
+
+\textbf{SetupTeam}
+\\
+The ResearchManager chooses a set of users as part of a team based on their name and role. This is then depicted in the Study Configuration UI where one can choose a given team predefined by the ResearchManager.
+\\
+
+\textit{\bf{Startup and shutdown use cases}} 
+\\
+The start-up and shutdown of the StudyConfigurationServer is currently not described in the use case model. Hence, the two following use cases have been created.
+\\
+
+\textbf{StartStudyConfigurationServer}
+\\
+The \textbf{SystemAdministrator} start the StudyConfigurationServer. If the server was not shut down properly, this use case invokes a 'Check Data Integrity' use case, which validates the consistency and lack of corruption in last saved data. As soon as the initialization of the server is complete, ResearchManagers and Users may initiate any of their use cases. 
+\\
+
+\textbf{ShutdownStudyConfigurationServer}
+\\
+The SystemAdministrator stops the StudyConfigurationServer. The server terminates any ongoing studies and stores any cached data from the blue client server side or from the setup of a new study in the StudyConfigurationUI. The connection between the clients and the server is shut down. Once this use case is completed, ResearchManagers and Users cannot access or modify a study. 
+\\\\
+
+\newpage
+
+\textit{\bf{Exception use cases}} 
+\\\\
+\textbf{AutoSys} can experience three major classes of system failures:
+
+\begin{itemize}
+	\item Network failure: one or more connections between the Systematic Review Client and the Study Configuration Server are interrupted.
+	\item Host failure: one or more clients are unexpectedly terminated.
+	\item Server failure: StudyConfigurationServer is unexpectedly terminated.
+\end{itemize}
+
+The first two class of exceptions are handled in the AutoSysServer component. The component class will provide generic methods for clients to re-establish connection after a network failure or to restore the state of Studies after a crash. The handling of the exceptions depend on whether it happens real-time or just occur due to short interruptions/delays. % The flexibility is is left to the developers to decide how to handle those exceptions.
+\\ 
+We handle network failures by notifying the client user of the network failure. We expect the client to retry later which the possibility of resuming from the last saved data in the backup. Consequently, we will design studies and their configuration in such a way that data is continuously saved to minimize data loss upon failures. 
+\\
+The server failure is handled by the use case for checking integrity of persistent data after an unexpected termination of the StudyConfigurationServer. This use case can be invoked automatically by the system upon start-up or manually by the SystemAdministrator. 
+\\\\
+
+\textbf{CheckDataIntegrity}
+AutoSys checks the integrity of the persistent data. This may include invoking tools provided by the database management system to re-index tables. Also, the system may check if the last logged studies and their configuration was saved to disk. The last saved data may be reused in the configuration of a new study. 
+
+ 
