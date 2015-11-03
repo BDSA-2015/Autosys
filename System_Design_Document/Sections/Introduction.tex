@@ -1,3 +1,8 @@
+\section{Introduction}
+
+\subsection{Purpose of the System}
+In \textbf{AUTOSYS}, the main client is the \textbf{SystemReviewClient} who needs to set up a \textbf{STUDY} consisting of one or several \textbf{PHASES}. A \textbf{PHASE} will consist of one or more \textbf{TASKS} which need to be completed before moving on to the next \textbf{PHASE}. The \textbf{StudyParticipants} can work in different \textbf{ROLES} which we anticipate will be either as \textbf{REVIEWER} or \textbf{VALIDATOR}. Also the \textbf{StudyParticipants} will be working together on a \textbf{STUDY} in \textbf{TEAMS}, but multiple teams will not be working on the same \textbf{STUDY}. Furthermore \textbf{TEAMS} working on the same \textbf{STUDY} will be considered as one big \textbf{TEAM}.
+
 \subsection{Design Goals}
 
 \begin{itemize}
@@ -17,7 +22,7 @@ The server should handle system failures (e.g. exceptions or network failures). 
 \\
 Goal: The response time of the system must not degrade dramatically with the number of users and concurrent studies. 
 \\\\
-The system is used by multiple teams with several users working on different studies. The work carried out by these users could be done concurrently and so the system will have a big workload when multiple requests are sent to the server. Since the users need study data quickly to conduct their research, it will be cumbersome if the users have to wait for a long time to get the data. Thus, the server should support quick data access for users. However, the system must do this in a way which takes memory into account to avoid an extensive resource consumption. This design goal is a refinement of the non-functional requirement "performance" in Requirement Analysis Document (section 3.3.3). 
+The system is used by multiple teams with several users working on different studies. The work carried out by these users could be done concurrently and so the system will have a big workload when multiple requests are sent to the server. Since the users need study data quickly to conduct their research, it will be cumbersome if the users have to wait for a long time to get the data. Thus, the server should support quick data access for users. However, the system must do this in a way which takes memory into account to avoid an extensive resource consumption.
 
 \item \textit{\bf{High performance}}: 
 \\
