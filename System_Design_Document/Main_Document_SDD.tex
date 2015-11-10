@@ -1,21 +1,47 @@
 \documentclass{article}
 %USEPACKAGE HERE
 \usepackage{graphicx}
+<<<<<<< Updated upstream
 \graphicspath{ {images/} }
 \usepackage{float}
+
+
+
+\graphicspath{ {images/} }
+
+\usepackage{float}
+
+
+
 
 
 %WRITE NEWCOMMANDS HERE
 
 \title{System Design Document - Yellow Project}
 \author{William Diedrichsen Marstrand, Dennis Thinh Tan Nguyen, 
-\\Jacob Mullit MÃ¸iniche, Thor Valentin Olesen}
+\\Jacob Mullit Møiniche, Thor Valentin Olesen}
 
 \begin{document}
 \maketitle
 
 %INCLUDE SECTIONS HERE
+
 \include{sections/Introduction}
 \include{sections/ProposedSoftwareArchitecture}
+
+\section{Introduction}
+	\include{subsections/PurposeOfTheSystem}
+	\include{subsections/DesignGoals}
+\section{Current Software Architecture}
+
+
+\section{Proposed}
+	\include{subsections/softwaremapping}
+
+\section{Proposed Software Architecture}
+	\include{subsections/SubsystemDecomposition}
+
+	\include{subsections/IdentifyingAndStoringPersistentData}
+>>>>>>> Stashed changes
 
 \end{document}
