@@ -5,9 +5,26 @@
 	\caption{Autosys subsystem decomposition (UML Component Diagram, layers shown as UML packages)}
 	\label{fig:Subsystem Decomposition, UML Component Diagram}
 \end{figure}
-The subsystems are identified from the functional requirements of the Autosys RAD document. A three-tier architectural style has been used for the decomposition of the system where a \textbf{StudyConfigurationClient} provides a front end for users to initiate all use cases related to setting up or configuring a \textbf{Study}. Also a \textbf{StudyReviewClient} will provide the front end for users to manage teams, and work with review tasks.
-The \textbf{AutosysServer} will be managing access control, concurrency control, and delegates to nested subsystems for the application logic. The \textbf{UserManagement} component is holding the responsibility for handling all CRUD operations regarding teams and individual users. The processing of all Study related CRUD operations are carried out by the \textbf{StudyManagement} component. The  \textbf{StudyManagement} also manages Study Tasks, Study Criteria and Classifications, Study Phases and he other parts included in a study. The \textbf{PaperManagement} runs the filtering mechanisms on the research papers and does import/export of research papers according to the Study Criteria and Classifications.
-The\textbf{ IStorage} interface is used for a Bridge Pattern to decouple the storage abstraction from the application logic so that the two can vary independently. At the bottom tier the \textbf{AutosysStorage} represents the subsystem for storing the user data, study data, and research papers.
+As it can be seen on the figure above a three-tier architectural style has been used for the decomposition of the system. The resason for this architecture instead of the two-tier client/server style is that, client/server has a tendency to closly combine the application data and application logic on the server. By using a three-tier style the devision into independent tiers for Interface, Application Logic, and Storage makes it possible to update or change the individual tiers without affecting the whole application. In this way the scaling and managment of the system becomes more flexible than by just using a client/server architectural style.
+Also it is woth noting that you still get the possibility for high security, and easier administration of the data, through a centralized data access.\\
+From the functional requirements of the Autosys RAD document the following needed services are defined by grouping related operations that share a common purpose:\\
+\begin{itemize}
+	\item Study Configuration
+	\item Task Handling
+	\item Paper Screening
+	\item Study Export
+	\item User Validation
+	\item User Management
+	\item Research Protocol Generation
+\end{itemize}
+The \textbf{StudyConfigurationClient} provides the configuration of studies service. It is a front end for users to initiate all use cases related to setting up or configuring a \textbf{Study}.
+The \textbf{ReviewService} provides an interface for different Review Clients to communicate with the \textbf{AutosysServer}, such that the system is not depenendt on the review client which makes the design more flexible.
+The \textbf{AutosysServer} will be providing the user validation services for allowing users access to other of the components in the application logic. 
+The \textbf{UserManagement} component is providing the user management service, since it holds the responsibility for handling all CRUD operations regarding teams and individual users. The \textbf{StudyManagement} component  provides the study configuration service by allowing users to set up and manage studies information.
+The \textbf{ExportMangement} is doing study export services which consist of exporting Studies as plain data sets such as cvs files.
+The \textbf{PaperManagement} provides the paper screening service, as it runs the filtering mechanisms on the research papers to get relevant papers according to the Study Criteria and Classifications.
+For the Research Protocol Generation service the component \textbf{ProtocolManagement} is created, which will be managing the export of protocols for studies based on the study's configuration.
+The\textbf{ Storage} interface is used for a Bridge Pattern to decouple the storage abstraction from the application logic so that the two can vary independently. At the bottom tier the \textbf{AutosysStorage} represents the subsystem for storing the user data, study data, and research papers.
 
 \subsection{Identifying and Storing Persistent Data}
 \paragraph{Identifying persistent objects}\mbox{}\\
