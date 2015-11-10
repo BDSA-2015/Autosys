@@ -53,7 +53,7 @@ When selecting components for the interface and storage subsystems of Autosys, w
 \begin{itemize}
 	\item \textit{Boundary objects should not define any fields.} Boundary objects should only hold temporary data correlated with the current request in a local variable.
 	\item \textit{Entity objects should not provide direct access to their fields.} All changes and accesses to a given object state should be done through dedicated methods. 
-	\item \textit{Methods for accessing state in entity objects should be syncronized}. By using the synchronized mechanism provided by Java only one thread can be active at a time in an access method.
+	\item \textit{Methods for accessing state in entity objects should be syncronized}. By using thread synchronization mechanism provided by C#, only one thread can be active at a time in an access method.
 	\item \textit{Nested calls to synchronized methods should be avoided.} When creating synchronized methods, one must make sure if a nested method call can lead into calling another synchronized method. The reason for this is to avoid deadlocks and must be avoided. If nested calls are unavoidable, one should either relocate the logic among methods to or impose a strict ordering of synchronized method calls.
 	\item \textit{Redundant state should be time-stamped} The state of an object can periodically, be duplicated. By example, two researchers may create objects with the same state and can lead to conflicts. To avoid this, objects should be time-stamped or have another unique identifier.
 
