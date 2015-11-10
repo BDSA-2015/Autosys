@@ -28,6 +28,8 @@ The system is used by multiple teams with several users working on different stu
 \\
 Goal: to ensure a quick and responsive user interface by using a database, which facilitates fast data processing.  
 \\\\
+Performance is the key to this project. Each and every component of this project speed is determined by how fast the database can respond. The user might  feel the UI is slow and sluggish, due to a slow database. Contrary, a slow and sluggish UI can feel more responsive and quick with a fast database. A faster database can furthermore serve more users without them noticing the increased load on the database. Ideally the user should never notice the program communicates with a external database, but just focus on program in front of him
+\\\\
 To achieve this, one could implement an entity framework database, which utilizes Microsoft's .NET framework to optimize database queries. This takes advantage of optimized queries and features implemented by Microsoft database experts. Furthermore, a future feature may be implemented to cache the result of large queries for quick access. This allows the server to respond hastily to large queries, which have previously been used. This will only be implemented for queries on data that is less likely to change. As a result, a memory trade-off may occur, which can be negated by using limits on how much memory and how many queries are cached. By way of example, the last x number of query results to the server could be cached for repeated use. The design goal is a refinement of the non-functional requirement "high performance" in the Requirement Analysis Document (section 3.3.3)
 
 \end{itemize}
