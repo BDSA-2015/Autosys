@@ -21,8 +21,15 @@ In this scope of the Autosys system, the main focus of persistent objects is set
 \paragraph{Selecting a storage strategy}\mbox{}\\
 By selecting and defining a persistent storage, strategy enables us to deal with issues related to storage management. The main design goals of the yellow part of Autosys is to be reliable, scalable while also has high performance. It is therefore decided to implement a database management system since it allows concurrent queries and provide transaction mechanisms to ensure data integrity. \\\\Compared to a flat file storage method, a database management system will also scale to large installations with many researchers that are to conduct studies simultaneously. However, to allow future upgrades or changes it has been decided that the storage strategy is not solely dependent on a database management system. Thus, the storage subsystem will provide an abstract interface that enables other kinds of storage to be coupled. The users of Autosys are not able to change the storage, however if an update is ever needed for the storage strategy, a system administrator are able to do so. 
 
-
 \subsection{Providing Access Control}
+This section aims to show how the yellow system handles requests from clients based on which actor they represent. AutoSys is a multi-user system with a manager and researcher actor. A researcher can both be assigned the role of a reviewer and validator since only their tasks are different. We have drawn an access control matrix depicting the allowed operations on the entity objects for both actors. In summary, a Manager can create Users and Teams while Researchers can create Studies and receive Tasks. Ideally, all actors must first authenticate based on their role before they can modify any object in the system. One would then use access control lists on each object to check the access privileges of the user. 
+Below is the access matrix for main AutoSys objects. Note that the study object is comprised of a StudyReport, ResearchProtocol and a Phase with Criteria. Tasks are generated in a Phase. Also, we have omitted method names for Users and Teams that only have CRUD operations. Finally, we assume that a Manager cannot also be a Researcher. 
+
+\begin{figure}[H]
+	\includegraphics[width = \linewidth]{Images/accessmatrix}
+	\caption{Access matrix for main AutoSys objects}
+	\label{fig:accessmatrix}
+\end{figure}
 
 \subsection{Designing the Global Control Flow}
 When selecting components for the interface and storage subsystems of Autosys, we effectively narrowed the alternatives for control flow mechanisms for the yellow part of Autosys. The autosysStorage is located in a web server. The web server awaits requests from the blue part of autosys or the studyConfigurationUI. For each request the web server receives, a new thread is made, which enable the web server to parallel handling of the requests. This results in a more responsive system. By example, the web server can process and handle a given process x while another process awaits a respond from the database. However, the stumbling block of threads is the increased complexity of the system resulting from the usage of threads. To establish a sturdy design with concurrency taken into consideration, one will define the following strategy for dealing with concurrent accesses to the shared storage:
