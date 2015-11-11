@@ -9,13 +9,22 @@
 
 \title{System Design Document - Yellow Project}
 \author{William Diedrichsen Marstrand, Dennis Thinh Tan Nguyen, 
-\\Jacob Mullit Møiniche, Thor Valentin Olesen}
+\\Jacob Mullit MÃ¸iniche, Thor Valentin Olesen}
 
 \begin{document}
 \maketitle
 
 %INCLUDE SECTIONS HERE
-\include{sections/Introduction}
-\include{sections/ProposedSoftwareArchitecture}
+\section{Introduction}
+	\input{subsections/PurposeOfTheSystem}
+	\input{subsections/DesignGoals}
+	\pagebreak
+\section{Proposed Software Architecture}
+	\input{subsections/SubsystemDecomposition}
+	\input{subsections/IdentifyingAndStoringPersistentData}
+	\pagebreak
+	\input{subsections/ProvidingAccessControl}
+	\input{subsections/DesigningTheGlobalControlFlow}
+	\input{subsections/HardwareSoftwareMapping}
 
 \end{document}
