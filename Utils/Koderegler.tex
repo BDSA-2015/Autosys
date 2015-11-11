@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage[danish]{babel}
+
+\title{Koderegler}
+\author{Thor V.A.N. Olesen}
+
+\begin{document}
+	
+\pagenumbering{gobble}
+\maketitle
+\pagenumbering{arabic}
+
+\section{Clean Code}
+I forløbet er vi gennem TA’s blevet introduceret til bogen ’Clean Code’ af Robert C. Martin, der som navnet antyder, handler om at skrive kode, der er læsevenligt. Clean code har haft en stor betydning i vores projekt, hovedsagligt fordi man i en større gruppe, som vores har behov for nemt at kunne forstå, ændre og videreudvikle hinandens kode. Desuden er dårlig kode enormt dyrt, da man har sværere ved at vedligeholde programmet og finde fejl, som derfor kræver ekstra arbejde og tid (penge). Clean Code er i dette henseende en læserdreven løsning, der producerer software, som er let at skrive, læse og vedligeholde. Derfor bør man også have i mente, at det bygger på en erkendelse om, at man ikke bare skriver koden for at få den til at virke på computeren, men snarere med henblik på at gøre den forståelig for mennesker også. En af fordelene ved clean code er, at man opnår en kildetekst, der er meget modulær og derfor nemmere at læse, forstå og teste. I forbindelse med dette er testing, refaktorering og TDD1 k ommet meget frem i søgelyset, da de er med til at højne kvaliteten af koden og vedligeholdelsen [TA’s].
+
+\section{Konventioner}
+For at imødekomme Clean Code, har vi efterstræbt at følge nogle konventioner indenfor navngivning og opbygning af vores klasser, metoder og variabler. Herudover har vi haft meget fokus på at gøre koden selvdokumenterende og samtidig understøtte den med javadokumentationen. Målet har været at opnå et modulært design, hvor koden er nem at forstå, ændre og teste.
+
+\newpage
+
+\subsection{Navnekonventioner}
+Ved navngivningen af klasser, metoder og variabler er det vigtigt at tilkendegive, hvad formålet med dem er, og efterstræbe at beskrive intentionen bag. Vi har navngivet klasserne med navneord og metoderne med verber. Formålet har været at afsløre intentionen bag koden gennem navnene, så man ikke behøver at nærlæse implementeringen for at få en forståelse af programmets struktur.Af samme grund har vi valgt at de klasser der har samme roller også har samme navne, fx FileSaver, FileChooser og FileLoader. Navnene antyder at deres funktionaliteter har med filer at gøre. Det er også vigtigt at angive en kontekst for klasserne og deres indbyrdes forhold. Dette er beskrevet øverst i en kommentar for hver af klasserne, så læseren har den nødvendige baggrundsviden til at forstå klassens ansvarsområde og relation til resten af programmet (se bilag: Clean code ­ Eksempel 1).
+
+\subsection{Metoder}For at opfylde Clean Code principperne har vi så vidt muligt set alle metoder som hjælpefunktioner, der skal være korte, beskrivende og selvforklarende. Dette har vi opnået ved at sørge for at metoderne så vidt muligt kun varetager en funktion. Tilsammen udgør metoderne en sammenhængende entitet. Alt dette har vi benyttet os af til at refaktorere større dele af koden, hvor metoderne var for omfattende og dækkede flere funktioner samtidig. Helt konkret har vi kigget på vores oprindelige kode, og ledt efter funktionaliteter, der kunne separeres fra eksisterende metoder. Der er eksempelvis forskel på om man tilgår et objekt eller søger svar på spørgsmål om et objekt. Clean code ­ Eksempel 2 i bilag illustrerer to metoder, der bruges til at bygge knapperne til rutevejledning i programmets sidepanel. Metodernes formål udtrykkes tydeligt gennem navngivningen, der gør koden selvforklarende. Førstnævnte bygger to knapper og benytter en anden metode til at definere deres størrelser. Derved er to funktionaliteter separeret fra hinanden istedet for at blive kaldt i én metode, der håndterer flere arbejdsopgaver.
+
+\subsection{Klasser}
+Klasserne er ligesom metoder med til at organisere kode og give det en kontekst, som det skal forstås i. Med dette i mente har vi efterstræbt at afdække de forskellige ansvarsområder med klasser. Klasserne begrænses til ét ansvarsområde, ligesom metoderne begrænses til et abstraktionsniveau. Dette princip er også benævnt SRP2. For at opnå dette har vi ligesom med metoder forsøgt at trække ansvarsområder ud af klasser, der håndterer flere ting på en gang. Ved at trække ansvarsområder ud i nye klasser, bliver kohæsionen (sammenhængskraften) reduceret i programmet, så tingene ikke afhænger gensidigt af hinanden. Et eksempel på dette er vores klasse Calculator, som udelukkende har udregner afstande mellem koordinatsæt.
+
+\subsection{Variabler}
+Navne på variabler bør være afslørende, meningsfulde og udtryksfulde. Navnene bør beskrive inten­ tionen med variablerne og ikke mislede læseren. Meningsfulde navne er med til at gøre koden selv­ forklarende og gør behovet for dokumentation mindre. Eksempelvis er der stor forskel på om en liste er navngivet ’list1’ eller ’shapeList’. Førstnævnte baserer sig på en høj abstraktion og er intetsigende om, hvad variablen bliver brugt til. Sidstnævnte forklarer en, at der er tale om en liste, som holder på ’shapes’ ­ i dette tilfælde er der tale om de ’figurer’ vi i sin tid brugte til at repræsentere forskellige dele af kortet (nu PathTags). Se Clean code ­ Eksempel 3 for et kodeudsnit med fokus på navngivning af variabler i programmet.
+
+\subsection{Kommentarer}
+Som nævnt før kan man gennem en god navngivning af klasser, metoder og variabler gøre koden selv­ dokumenterende og selvforklarende. I bogen ’Clean Code’ hævder forfatteren ligefrem, at kommentarer bliver brugt af programmører, der ikke er gode nok til at forklare, hvad de vil i kode. Dette har vi dog vurderet at være til ekstremen, og har konsekvent kommenteret det meste af vores kode af hensyn til flere grunde. Først og fremmest er det i sig selv en god øvelse, og det tvinger en til at forstå, hvad der sker i koden. Derudover er det en hjælp for hele gruppen, da vi som udgangspunkt ikke har de samme forudsætninger og vi ikke kan arbejde ligeligt på alt. Kommentarer er en hjælp til at følge op på ændringer løbende og sætte sig ind i andres metodik og tankegang.
+Vi har bestræbt os på at beskrive formålet bag vores kode for både klasserne generelt og metoderne specifikt. Dertil skal nævnes at alle offentlige metoder har fået tilføjet javaDoc kommentarer, så man kan læse hvad de gør, og hvordan de fungerer uden at skulle tilgå koden. De steder hvor der er behov for en kontekst, har vi prøvet at skabe en sammenhæng og relation til resten af koden. Eksempelvis havde vi tidligere beskrevet at vores ’DrawShape’ klasse benytter subklasserne i Shapes pakken til at tegne forskellige dele af kortet.
+
+\section{Praksis}
+
+\textbf{CodeReview}
+
+\begin{itemize}
+	\item Opret ny branch med passende navnekonvention (feature, bug eller tredje, fx. Feature/zoom\textunderscore{out}\textunderscore{function})
+	\item Dokumentation, kommentarer og testing
+	\item Pull ændringer fra master til branchog push derefter egne ændringer til master 
+	\item Slet branch
+\end{itemize}
+
+\textbf{OBS}
+\\
+Folk får uddelt kodeopgaver i grupper gennem kollektiv enighed i hele gruppen. Ingen laver noget på egen hånd uden at have aftalt det med resten af gruppen først. Folk skiftes til at kode og skrive på opgaven.
+
+\textbf{Commit}
+\\
+Ved commit skal der i den tilknyttede kommentar udspecificeres, hvad der er lavet; eksempelvis om noget er blevet tilføjet, ændret eller slettet (added, modified, deleted).
+
+\end{document}
