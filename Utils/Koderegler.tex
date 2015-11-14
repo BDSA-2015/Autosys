@@ -20,9 +20,11 @@ For at imødekomme Clean Code, har vi efterstræbt at følge nogle konventioner 
 \newpage
 
 \subsection{Navnekonventioner}
-Ved navngivningen af klasser, metoder og variabler er det vigtigt at tilkendegive, hvad formålet med dem er, og efterstræbe at beskrive intentionen bag. Vi har navngivet klasserne med navneord og metoderne med verber. Formålet har været at afsløre intentionen bag koden gennem navnene, så man ikke behøver at nærlæse implementeringen for at få en forståelse af programmets struktur.Af samme grund har vi valgt at de klasser der har samme roller også har samme navne, fx FileSaver, FileChooser og FileLoader. Navnene antyder at deres funktionaliteter har med filer at gøre. Det er også vigtigt at angive en kontekst for klasserne og deres indbyrdes forhold. Dette er beskrevet øverst i en kommentar for hver af klasserne, så læseren har den nødvendige baggrundsviden til at forstå klassens ansvarsområde og relation til resten af programmet (se bilag: Clean code ­ Eksempel 1).
+Ved navngivningen af klasser, metoder og variabler er det vigtigt at tilkendegive, hvad formålet med dem er, og efterstræbe at beskrive intentionen bag. Vi har navngivet klasserne med navneord og metoderne med verber. Formålet har været at afsløre intentionen bag koden gennem navnene, så man ikke behøver at nærlæse implementeringen for at få en forståelse af programmets struktur.
+Af samme grund har vi valgt at de klasser der har samme roller også har samme navne, fx FileSaver, FileChooser og FileLoader. Navnene antyder at deres funktionaliteter har med filer at gøre. Det er også vigtigt at angive en kontekst for klasserne og deres indbyrdes forhold. Dette er beskrevet øverst i en kommentar for hver af klasserne, så læseren har den nødvendige baggrundsviden til at forstå klassens ansvarsområde og relation til resten af programmet (se bilag: Clean code ­ Eksempel 1).
 
-\subsection{Metoder}For at opfylde Clean Code principperne har vi så vidt muligt set alle metoder som hjælpefunktioner, der skal være korte, beskrivende og selvforklarende. Dette har vi opnået ved at sørge for at metoderne så vidt muligt kun varetager en funktion. Tilsammen udgør metoderne en sammenhængende entitet. Alt dette har vi benyttet os af til at refaktorere større dele af koden, hvor metoderne var for omfattende og dækkede flere funktioner samtidig. Helt konkret har vi kigget på vores oprindelige kode, og ledt efter funktionaliteter, der kunne separeres fra eksisterende metoder. Der er eksempelvis forskel på om man tilgår et objekt eller søger svar på spørgsmål om et objekt. Clean code ­ Eksempel 2 i bilag illustrerer to metoder, der bruges til at bygge knapperne til rutevejledning i programmets sidepanel. Metodernes formål udtrykkes tydeligt gennem navngivningen, der gør koden selvforklarende. Førstnævnte bygger to knapper og benytter en anden metode til at definere deres størrelser. Derved er to funktionaliteter separeret fra hinanden istedet for at blive kaldt i én metode, der håndterer flere arbejdsopgaver.
+\subsection{Metoder}
+For at opfylde Clean Code principperne har vi så vidt muligt set alle metoder som hjælpefunktioner, der skal være korte, beskrivende og selvforklarende. Dette har vi opnået ved at sørge for at metoderne så vidt muligt kun varetager en funktion. Tilsammen udgør metoderne en sammenhængende entitet. Alt dette har vi benyttet os af til at refaktorere større dele af koden, hvor metoderne var for omfattende og dækkede flere funktioner samtidig. Helt konkret har vi kigget på vores oprindelige kode, og ledt efter funktionaliteter, der kunne separeres fra eksisterende metoder. Der er eksempelvis forskel på om man tilgår et objekt eller søger svar på spørgsmål om et objekt. Clean code ­ Eksempel 2 i bilag illustrerer to metoder, der bruges til at bygge knapperne til rutevejledning i programmets sidepanel. Metodernes formål udtrykkes tydeligt gennem navngivningen, der gør koden selvforklarende. Førstnævnte bygger to knapper og benytter en anden metode til at definere deres størrelser. Derved er to funktionaliteter separeret fra hinanden istedet for at blive kaldt i én metode, der håndterer flere arbejdsopgaver.
 
 \subsection{Klasser}
 Klasserne er ligesom metoder med til at organisere kode og give det en kontekst, som det skal forstås i. Med dette i mente har vi efterstræbt at afdække de forskellige ansvarsområder med klasser. Klasserne begrænses til ét ansvarsområde, ligesom metoderne begrænses til et abstraktionsniveau. Dette princip er også benævnt SRP2. For at opnå dette har vi ligesom med metoder forsøgt at trække ansvarsområder ud af klasser, der håndterer flere ting på en gang. Ved at trække ansvarsområder ud i nye klasser, bliver kohæsionen (sammenhængskraften) reduceret i programmet, så tingene ikke afhænger gensidigt af hinanden. Et eksempel på dette er vores klasse Calculator, som udelukkende har udregner afstande mellem koordinatsæt.
@@ -36,13 +38,25 @@ Vi har bestræbt os på at beskrive formålet bag vores kode for både klasse
 
 \section{Praksis}
 
-\textbf{CodeReview}
+\textbf{Branching}
 
 \begin{itemize}
-	\item Opret ny branch med passende navnekonvention (feature, bug eller tredje, fx. Feature/zoom\textunderscore{out}\textunderscore{function})
-	\item Dokumentation, kommentarer og testing
-	\item Pull ændringer fra master til branchog push derefter egne ændringer til master 
+ 	\item Opret først lokal branch med passende navnekonvention.
+ 	\item Publish branch til origin master. 
+ 	\item Eksempel: Implementation/ModelClasses\textunderscore{User}\textunderscore{CRUD})
+	\item Tilføj dokumentation og kommentarer
+	\item Pull ændringer fra master til branch og push derefter egne ændringer til master 
 	\item Slet branch
+\end{itemize}
+
+\textbf{Navngivning}
+
+\begin{itemize}
+ 	\item implementation/
+ 	\item testing/
+ 	\item documentation/
+	\item bugfix/
+	\item refactor/
 \end{itemize}
 
 \textbf{OBS}
