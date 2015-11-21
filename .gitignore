@@ -1,13 +1,4 @@
 *.log
 *.aux
 *.gz
-
-.texpadtmp/Requirement_Analysis_Document.synctex.gz
-
-section/.texpadtmp/ObjectAnalysis.synctex.gz
-
-System_Design_Document/Main_Document_SDD.synctex.gz
-System_Design_Document/Main_Document_SDD.pdf
-System_Design_Document/Main_Document_SDD.pdf
-Logbook/MainLog.pdf
-Logbook/MainLog.toc
+*.toc
