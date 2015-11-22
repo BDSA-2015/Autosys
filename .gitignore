@@ -1,6 +1,7 @@
 *.log
 *.aux
 *.gz
+<<<<<<< HEAD
 
 .texpadtmp/Requirement_Analysis_Document.synctex.gz
 
@@ -13,3 +14,10 @@ Logbook/MainLog.pdf
 Logbook/MainLog.toc
 
 GroupCooperation/Section/IndividualPart.tex
+=======
+*.toc
+>>>>>>> origin/master
+
+GroupCooperation/GroupCooperationMain.pdf
+
+GroupCooperation/GroupCooperationMain.pdf
