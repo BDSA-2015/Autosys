@@ -1,5 +1,7 @@
 *.log
 *.aux
 *.gz
+*.pdf
 *.toc
+GroupCooperation/Section/IndividualPart.tex
 GroupCooperation/Section/Dennis.tex
