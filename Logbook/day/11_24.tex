@@ -38,6 +38,14 @@
 \textbf{User Validation}
 The application logic will not handle user validation (e.g. manager or researcher), which is handled in the interface part of the system between yellow and blue part. The only thing application logic considers is whether a given user exists in the database. Roles are checked in Study Management based on an enum flagtype related to a user, e.g. a user can have a "Reviewer", "Manager" or "Validator" role determining which tasks are to be returned. A Reviewer will receive review tasks and a Validator will receive conflict tasks. Blue team will validate users based on whether they represent a Manager or Researcher. 
 
+\newpage
+
 \textbf{Code Skeleton Design Changed to reduce coupling}
 
 If all packages have a facade interface used by other subsystems it allows single responsibility. Also allows team members to work on subsystems independently. We do not touch each other's code this way. A sub system should be able to be pulled out and replaced without causing trouble. By way of example, ExportManagement depends on the ProtocolManagement and its a predefined protocol. A using statement for Protocol is used in ExportManagement. Thus, we need to change the UML and use a dashed line between ExportManagement and ProtocolManagement. The dependency resides in where the object comes from and not how it is passed (e.g. from WebAPI). 
+
+\begin{figure}[H]
+  \includegraphics[width = 31 em]{image/oldsubsystemdependencies}
+  \label{fig:Subsystem Dependencies}
+  \caption{Subsystem Dependencies}
+\end{figure}
