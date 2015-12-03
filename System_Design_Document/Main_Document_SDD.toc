@@ -6,8 +6,8 @@
 \contentsline {subsection}{\numberline {2.2}Identifying and Storing Persistent Data}{7}
 \contentsline {paragraph}{Identifying persistent objects}{7}
 \contentsline {paragraph}{Selecting a storage strategy}{7}
-\contentsline {subsection}{\numberline {2.3}Providing Access Control}{8}
-\contentsline {subsection}{\numberline {2.4}Designing the Global Control Flow}{8}
-\contentsline {subsection}{\numberline {2.5}Hardware/Software mapping}{9}
-\contentsline {paragraph}{Systems}{9}
-\contentsline {paragraph}{Program components}{10}
+\contentsline {subsection}{\numberline {2.3}Providing Access Control}{9}
+\contentsline {subsection}{\numberline {2.4}Designing the Global Control Flow}{9}
+\contentsline {subsection}{\numberline {2.5}Hardware/Software mapping}{10}
+\contentsline {paragraph}{Systems}{10}
+\contentsline {paragraph}{Program components}{11}
