@@ -1,0 +1,39 @@
+\section{\logtitle 11/26-2015} % Remember to set
+\duration{9:00}{14:00}
+\attend{\at}{\nat}{\at}{\at}
+
+
+\begin{itemize}
+	\item [\textbf{Meeting pins:}]
+	\item Rework database design
+	\item Working on Criteria
+	\item paperManagement
+\end{itemize}
+
+\begin{itemize}
+	\item [\textbf{Sprint Planning:}]
+	\item Talk with TA about database design
+	\item Discuss Test driven development 
+\end{itemize}
+
+\begin{itemize}
+	\item [\textbf{Work planning:}]
+	\item Add new title in each logbook, which detials any radical design changes.
+	\item Thor and dennis has been working on a revicited entity relation model to be able to create the database
+	\item We have desided to use a microsoft database to avoid any conflict between different types of databases
+	\item We don't need to worry about database queing. Aparently c \# will automaticly handled that aspect. According to Mokkel TA , each task will automaticly queue up to be proceessed. I don't think this will solve it on the client side, but that is hardly our problem 
+	\item You might want facilitate regular expressions in the search  to enable more advanced searches. Instead of asking does this name appear in the text, then you can ask, I want to sample papers where this name appeared at least 8 times.
+	
+	\item [\textbf{Work accomplished today:}]
+	\item E\\R model created 
+	\item Subsytem dependency resolved: Create exportable item Interface To expose methods for formating exporting Criterias, Protocol and Criteria will implement CRUD
+	\item Database Dispose have been replaced by Using blocks 
+	\item Database connection is maintained upon  methods calls
+	\item Created Facade package in application logic, used to translate entities to storage 
+	\item Repository have been moved to storage, and will now contain concrete repsoitories for all entities
+
+	\item \textbf{William} is working on the Paper management class
+	\item \textbf{Jacob} is working on the Phase and Criteria classes
+	\item \textbf{Dennis} User management class
+	\item \textbf{Thor} Storage, IFasade
+\end{itemize}
