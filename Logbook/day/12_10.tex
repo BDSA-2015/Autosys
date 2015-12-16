@@ -6,32 +6,32 @@
 \begin{itemize}
 	\item [\textbf{Meeting pins:}]
 	\item 
-	\end{itemize}
+\end{itemize}
 
 \begin{itemize}
 	\item [\textbf{Done:}]
-	\item Thor has created an async repository that is tested. We dispose per request and not per method call with using. We are discussing about program layer regarding dispose and which class should be using Idisposable. (We are implementing Idispose on the facade classes) By not using (using) it is now possible to call many request on database before disposing. This enables us to create sleek code, compared to before. Mikael ahas recommended "RESTfull" API. It allows one to check the programs behavior. Eg when to throw exceptions. Jacob mullit recommends doing the validation on the WEP api layer. One issue is doing validation on every layers or if this is redundant. We agree that webAPI only converts the data while handlers are resposible for validating the data. IF something is wrong with the received data, an exception will be thrown by the handlers. The webAPI will then handle the exception
-	\item the database will now return a given value after a crud operation has been call. Create returns task(int), Read returns task(someEntity) and Deletes returns Task(bool).
-	\item The contract in the facades shall be updated to use Async. Every concrete repository is now defaultly implementing concrete entities (eg StoredUser).)
-	\item william has changed protocol so it now contains name of study, list of phases and a discription. The group discusses whether we shall keep protocols since they basically  is a copy of a study. One suggestion is to just assume that exportmanagement will take a study convert it to a string and regard that as a protocol. However, a protocol class allows one to extend or shrink regarding what to export
-	\item Dennis has created a skeleton for the UI with navigation function. We only need to implement webAPI, viewModels, databinding and a model
-	\item Classification Criteria definition. How one can look on a set of finished data. To have different perspectives on the same data. Inclusion/Exclusion criterias are used during the phases to define which paper shall be included or excluded in or primary study. A study is a set of data that is relevant for the main study. Classification criteria is used in the end to define a perspective on the collected data.
-	\item William implemented bibtex library as a replacement for all the bibtex handler classes. IT enables one to reduce code by removing uneccecary classes and we avoid reinventing the wheel again.
-	\item Exportmanager now implements csv converter that  uses european standards for commaseperation (semicolons are used).  We tried to csv package but was unable to implement it due to technical complications.
+	\item Thor has created an async repository that is tested. We dispose per request and not per method call with using. We are discussing program layer regarding dispose of and which class should be using Disposable. (We are implementing I dispose on the facade classes) By not using (using) it is now possible to call many requests on the database before disposing of. This enables us to create sleek code, compared to before. Mikael has recommended "RESTfull" API. It allows one to check the programs behavior. Eg when to throw exceptions. Jacob mullet recommends doing the validation on the WEP API layer. One issue is doing validation on every layer or if this is redundant. We agree that webAPI only converts the data while handlers are responsible for validating the data. IF something is wrong with the received data, an exception will be thrown by the handlers. The webAPI will then handle the exception
+	\item the database will now return a given value after a crud operation has been a call. Create returns task(int), Read returns task(someEntity) and Deletes returns Task(bool).
+	\item The contract in the facades shall be updated to use Async. Every concrete repository is now default implementing concrete entities (eg StoredUser).)
+	\item William has changed protocol so it now contains a name of the study, a list of phases and a description. The group discusses whether we shall keep protocols since they basically  are a copy of a study. One suggestion is to just assume that export management will take a study convert it to a string and regard that as a protocol. However, a protocol class allows one to extend or shrink regarding what to export
+	\item Dennis has created a skeleton for the UI with a navigation function. We only need to implement webAPI, viewModels, data binding and a model
+	\item Classification Criteria definition. How one can look on a set of finished data. To have different perspectives on the same data. Inclusion/Exclusion criteria are used during the phases to define which paper shall be included or excluded in or primary study. A study is a set of data that is relevant for the main study. Classification criteria are used in the end to define a perspective on the collected data.
+	\item William implemented BibTeX library as a replacement for all the BibTeX handler classes. IT enables one to reduce code by removing unmercenary classes and we avoid reinventing the wheel again.
+	\item Export manager now implements CSV converter that  uses European standards for comma separation (semicolons are used).  We tried to CSV package but was unable to implement it due to technical complications.
 \end{itemize}
 
 \begin{itemize}
 	\item [\textbf{Refactoring:}]
 	\item IRepository is replaced by IAsyncRepository (Only temporary for refactoring)
-	\item Update ifacade to support async methods
-	\item Implements IDisposable on Ifacade to storage layer
+	\item Update facade to support async methods
+	\item Implements IDisposable on I facade to storage layer
 	\item Implement Dispose methods in facades
 	\item Rename facade classes to adapters (Use async return types as they return tasks)
-	\item Remove test stubs in storage because they are deprecated. We now inject a mock dbcontext interface for mocking purpose
-	\item Remove classes starting with old prefix (Use depricated tag for next time)
+	\item Remove test stubs in storage because they are deprecated. We now inject a mock DB context interface for mocking purpose
+	\item Remove classes starting with old prefix (Use deprecated tag for next time)
 	\item Entities shall me refactored to fully support the requirements in the webAPI
-	\item Csv converter has to be changed when study fields are changed
-	\item recommend use of pluralsite
+	\item CSV converter has to be changed when study fields are changed
+	\item recommend use of plurality
 	\item Test csvConverter
 \end{itemize}
 
@@ -39,7 +39,7 @@
 	\item [\textbf{Sprint Planning:}]
 	\item Fine purpose on classification field for a study.
 	\item Jacob will be fixing entities so it matches the webAPI
-	\item a phase cannot have unasigned tasks. This need to be reflecton the code 	
+	\item a phase cannot have unassigned tasks. This need to be reflected the code     
 \end{itemize}
 
 \begin{itemize}
