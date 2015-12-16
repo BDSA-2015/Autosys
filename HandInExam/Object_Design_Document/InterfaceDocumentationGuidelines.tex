@@ -1,0 +1,18 @@
+\subsection{Interface documentation guidelines}
+To improve communication and understanding between the developers, the group has defined a set of documentation guidelines that must be followed strictly in order to have a consistent codebase structure and design. 
+
+
+\begin{itemize}
+	\item[Base Guidelines]
+	\item Every class are named with singular nouns.
+	\item Every class and methods are to be documented before they are implemented. The documentation must be precise in regarding for what the given class or method is responsible for. This will enable developers to be more effective in their work because they do not have to spend time on analyzing poorly written documentation or the implementation itself.
+	\item Every method must be defined in a way that they only have one responsibility. Long methods should be refactored into helping methods or moved to other appropriate sections of the system.
+	\item Every non-trivial parameters and returns are to be documented.
+	\item Every Method signatures must be written with camel-case and they must follow C\# formation standards. This improves readability for other c\# developers that are to read the code.
+	\item Error status must be returned as exceptions and propagated to appropriate layers. One should avoid catching general exception since this may mask problems that have nothing to do with the system. Instead of just catching a concrete 'Exception', one must catch specific exceptions that may be relevant to process such as "OutOfMemoryException" that would preferably be propagated to the user.
+	\item One should use generic classes where to seem to be fit. For an example, one should utilize an interface such as IList<object> instead of a concrete implementation such as 'List<object>'. This makes it easier to refactor the code since it is not tightly coupled to some concrete class.
+	\item Dependency injection must be considered when creating new classes and methods. System modularity will make it easier to extend or refactor the system.
+	
+\end{itemize}
+
+It should be noted that the group had decided to follow these base guidelines as much as possible. However, it should be considered that exceptions may occur and some rules may be broken. These exceptions must be brought up into descussion or reconsidered before proceeding with the given activiety.

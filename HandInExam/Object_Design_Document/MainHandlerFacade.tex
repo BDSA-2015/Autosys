@@ -1,0 +1,7 @@
+\section{Object design trade-offs}
+\subsection{Facade Pattern: MainHandler Facade}
+Multiple handler classes were made with their own well defined area of responsibility in an attempt to uphold the Single Responsibility principle. This resulted in several handlers and thus a complex system of handlers which we considered a problem, since it made the understanding of the system more complicated than if the functionality was gathered one place.
+In this case a Facade Pattern seemed useful, since it would make it possible to wrap the complex set of handlers and offer a simple way to access the required handler functionality using a MainHandler Facade as a facilitator.
+The use of the facade pattern in this case is not strictly as the general guidelines describe, since no interface is provided for the handlers to implement, but the principle of having one facilitating class providing the functionality of the subsystem classes is respected.
+Another important point was the way a MainHandler facade could decouple the subsystem of handlers from the using classes.
+Even though the limited functionality provided through the facade would mean some what less flexibility than if all handlers were used, the conclusion was made that based on the just mentioned pros, the use of a facade would be primarily beneficial.
