@@ -1,4 +1,109 @@
 \section{System Testing}
+\subsection{systemtesting}
+This system testing strategy guide has been written to ensure that the complete system atleast complies with the functional and nonfunctional requirements described in the RAD document. 
+\subsection{Product, Revision and Overview}
+AutoSys is a dedicated provisioning service that provisions study related data to the client, based on task requests defined in the Study Configuration. The AutoSys Configuration Server is used to define the configuration of a given study for a team of researchers. The server stores study data and provides the client with the appropriate requested data. Also, the server delivers review tasks for the client used to conduct studies. Thus, the purpose of the system is to provide a tool support for conducting a study by a team of researchers\\
+\textit{See RAD for more information.}
+\begin{table}[H]
+\centering
+\caption{Planned releases}
+\label{my-label}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{1}{|l|}{\textbf{Version}}     & \multicolumn{1}{l|}{\textbf{Release Date}} & \multicolumn{1}{l|}{\textbf{Changes}} \\ \hline
+\multicolumn{1}{|l|}{Initial Release (v1)} & \multicolumn{1}{l|}{2015-12-10}            & \multicolumn{1}{l|}{}                 \\ \hline
+\multicolumn{1}{|l|}{Revision 1}           & \multicolumn{1}{l|}{2015-12-18}            & \multicolumn{1}{l|}{}                 \\ \hline
+\end{tabular}
+\end{table}
+\subsection{Features to be tested}
+The following features will be tested as a minimum to verify that the system conforms to the most important functional requirements:
+\begin{itemize}
+\item Create a team with a manager
+\item Create a Study Configuration 
+ 	\begin{itemize}
+	\item Assign a team 
+	\item Define a phase
+	\item Create inclusion, exclusion and classification criteria
+	\end{itemize}
+\item Filter research papers using comparison operators
+\item Export papers in csv 
+\item Handle multiple concurrent client requests
+\item Generate a research protocol 
+\end{itemize}
+The following features will be tested as a minimum to verify that the system conforms to the most important nonfunctional requirements:
+\begin{itemize}
+\item The user must be able to configure a study using at most three application windows
+\item The system should restart within 30 seconds upon failures.
+\item The system should handle a client task request within 15 seconds. 
+\end{itemize}
 
+\subsection{Features not to be tested}
+\begin{itemize}
+\item Platform compatibility on devices running other OS than Windows 10 
+\item Database compatibility level 
+Import and export of pdf files 
+\item All features in the blue system 
+\end{itemize}
+\subsection{Environment Configuration }
+
+
+
+\begin{table}[H]
+\caption{Platform environment}
+\label{my-label}
+\begin{tabular}{|r|c|c|}
+\hline
+\multicolumn{1}{|l|}{\textbf{}} & \textbf{Macbook Pro (15-inch, 2015)}  & \multicolumn{1}{l|}{\textbf{Dell XPS 13}} \\ \hline
+\textbf{Operating system}       & Windows 10 (64-bit) Bootcamp          & Windows 10 (64-bit)                       \\ \hline
+\textbf{Memory}                 & 16 GB                                 & 8 GB                                      \\ \hline
+\textbf{Hard disk}              & 500 + GB, SSD                         & 500 + GB, SSD                             \\ \hline
+\textbf{Processor}              & 2.5GHz Intel Core i7-4870HQ           & Intel Core i7-6500U                       \\ \hline
+\textbf{Graphics card}          & NVIDIA GeForce GT 750M                & Intel® HD Graphics 5200                   \\ \hline
+\textbf{Screen}                 & 15.4-inch 2,880 x 1,800 Retina screen & 13.3? QHD+ (3200 x 1800)                  \\ \hline
+\textbf{Browser}                & Chrome                                & Edge                                      \\ \hline
+\textbf{Network adapter}        & 802.11ac wireless                     & 100 MB Ethernet                           \\ \hline
+\end{tabular}
+\end{table}
+\subsection{System test methodology.}
+The system will primarily be tested from the functional requirements (from RAD) and the nonfunctional requirements (SDD). However, other activities such as Pilot testing, Acceptance testing or Installation testing might be used to further verify the system requirements. By way of example, we could select a group of potential users to test the common functionality described previously. The functional tests will be carried out by finding test cases from the use case models in the RAD document. The goal is to find differences between the functional requirements and the system. 
+\subsection{Initial Test requirements}
+\textit{Test strategy (this document), written by test personnel, reviewed by product team, agreed to by project manager}
+\subsection{System test entry and exit criteria}
+\textbf{Entry Criteria}\\
+The software must meet the criteria below before the product can start system test.
+\begin{itemize}
+\item All basic functionality must work.
+\item All unit tests run without error.
+\item The code is frozen and contains complete functionality.
+\item The source code is checked into the Git repository.
+\item All code compiles and builds on the appropriate platforms.
+\item All known problems posted to Git.
+\end{itemize}
+\textbf{Exit Criteria}\\
+The software must meet the criteria below before the product can exit from system test. 
+\begin{itemize}
+\item All system tests executed (not passed, just executed).
+\item Results of executed tests must be discussed with product management team.
+\item Successful generation of executable images for all appropriate platforms.
+\item Code is completely frozen.
+\item Documentation review is complete.
+\item There are 0 showstopper bugs.
+\item There are fewer than $<x>$ major bugs, and $<y>$ minor bugs.
+\end{itemize}
+\textbf{Test Deliverables}
+\begin{itemize}
+\item  Automated tests in $<framework>$
+\item Test Strategy and SQA (Software Quality Assurance) project plan
+\item Test procedure
+\item Test logs
+\item Bug-tracking system report of all issues raised during SQA process
+\item Test Coverage measurement
+\end{itemize}
+\subsection{Test Cases}
+\begin{itemize}
+\item Add test case for ExportProtocol use case
+\item Add test case for RetrieveStudyInformation use case
+\item Add test case for ManageStudy use case
+\end{itemize}
 
 
