@@ -1,0 +1,54 @@
+\documentclass{article}
+%USEPACKAGE HERE
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{float}
+\usepackage[latin1]{inputenc} 
+
+%WRITE NEWCOMMANDS HERE
+
+\title{Object Design Document - Yellow Project}
+\author{William Diedrichsen Marstrand, Dennis Thinh Tan Nguyen, 
+\\Jacob Mullit Møiniche, Thor Valentin Olesen}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+%INCLUDE SECTIONS HERE
+\section{Introduction}
+
+This object design document has been written to provide the reader with an insight to our design choices throughout the project. To support this, class diagrams will be used to highlight where design patterns have been used. Finally, this is related back to the SOLID principles. The class diagrams are used to showcase our familarity with the techniques elaborated in OOSE throughout the course. Note that this document only focuses on important classes and provide a complete detailed description only of those. The purpose of the UML techniques is to better convey our design choices and final code structure. 
+
+	\input{subsection/ObjectDesignTradeoffs}
+	\input{subsection/InterfaceDocumentationGuidelines}
+	\input{subsection/Definitions}
+	\input{subsection/References} 
+\section{Packages}
+	\input{subsection/SubsystemDecomposition}
+	\input{subsection/PackageOverview}
+	\input{subsection/PackageDependencies}
+	\input{subsection/PackagePurpose}
+\section{Class interfaces}
+	\input{subsection/Classes} % Include class diagrams 
+	\input{subsection/PublicInterfaces}
+	\input{subsection/Dependencies}
+	\input{subsection/Operations}
+	\input{subsection/Attributes}
+	\input{subsection/Exceptions}
+\section{Design Decisions}
+	\input{subsection/CodeStructure}
+	\input{subsection/Solid}
+	\input{subsection/Examples}
+\section{Design Patterns}
+	\input{subsection/BridgePatternBetweenLogicAndStorage}
+	\input{subsection/RepositoryPatternInDatabase}
+	\input{subsection/MappingBetweenLayers}
+	\input{subsection/UIMVVMPattern}
+	\input{subsection/Adapter pattern in WebApi}
+	\input{subsection/Adapter pattern in ApplicationLogic}
+\section{Discussion} % Relate used design decisions to SOLID principles
+
+\end{document}
