@@ -1,27 +1,27 @@
 \subsection{Design Goals}
 
 \begin{itemize}
-\item \textit{\bf{Ease of use}}: 
-\\
-Goal: It should be relatively easy to setup a study configuration because it makes up the foundation that all study work processes rely on. 
-\\\\
-The end user may have a low level of computer expertise potentially resulting in the wrong setup of a study.  This can happen because the user cannot find or access the resources required for setting up a study or they become frustrated if they have to go through many windows. However, these usability traits should not compromise with the system functionalities. The system must still be sufficiently complex in order to provide a variety of ways to setup the study configuration.  A primary focus on usability traits has been chosen due to the scope and time span of the project. Functionalities might be sacrificed to achieve this. This design goal is a refinement of the non-functional requirement  usability in Requirement Analysis Document  (section 3.3.1). 
-
-\item \textit{\bf{High Reliability}}: 
-\\
-Goal: The server and study configuration ui must be reliable, handle system failures and wrong user input.
-\\\\
-The server should handle system failures (e.g. exceptions or network failures). Due to the client-server architecture, it is important that the server can automatically reboot upon system failures. As a result, other clients can continuously access the server. Also, the server should ensure that incomplete data transfers are resumed in case of network failures. Further, the Study Configuration UI should handle invalid user input and ensure the input is only sent to the server when correct. These decisions ensure that the work of the end user is handled properly and the server is available when needed. Speed might be sacrificed to achieve this. This design goal is a refinement of the non-functional requirement "high reliability" in Requirement Analysis Document (section 3.3.2).  
-
-\item \textit{\bf{Scalability}}:
-\\
-Goal: The response time of the system must not degrade dramatically with the number of users and concurrent studies. 
-\\\\
-The system is used by multiple teams with several users working on different studies. The work carried out by these users could be done concurrently and so the system will have a big workload when multiple requests are sent to the server. Since the users need study data quickly to conduct their research, it will be cumbersome if the users have to wait for a long time to get the data. Thus, the server should support quick data access for users. However, the system must do this in a way which takes memory into account to avoid an extensive resource consumption.
-
-\item \textit{\bf{High performance}}: 
-\\
-Goal: to ensure a quick and responsive user interface by using a database, which facilitates fast data processing.  
-\\\\
-Performance is the key to this project. Each and every component of this project speed is determined by how fast the database can respond. The user might  feel the UI is slow and sluggish, due to a slow database. Contrary, a slow and sluggish UI can feel more responsive and quick with a fast database. A faster database can furthermore serve more users without them noticing the increased load on the database. Ideally the user should never notice the program communicates with a external database, but just focus on program in front of him
+	\item \textit{\bf{Ease of use}}: 
+	\\
+	Goal: It should be relatively easy to set up a study configuration because it makes up the foundation that all study work processes rely on. 
+	\\\\
+	The end user may have a low level of computer expertise potentially resulting in the wrong setup of a study.  This can happen because the user cannot find or access the resources required for setting up a study or they become frustrated if they have to go through many windows. However, these usability traits should not compromise with the system functionalities. The system must still be sufficiently complex in order to provide a variety of ways to setup the study configuration.  A primary focus on usability traits has been chosen due to the scope and time span of the project. Functionalities might be sacrificed to achieve this. This design goal is a refinement of the non-functional requirement  usability in Requirement Analysis Document  (section 3.3.1). 
+	
+	\item \textit{\bf{High Reliability}}: 
+	\\
+	Goal: The server and study configuration UI must be reliable, handle system failures and wrong user input.
+	\\\\
+	The server should handle system failures (e.g. exceptions or network failures). Due to the client-server architecture, it is important that the server can automatically reboot upon system failures. As a result, other clients can continuously access the server. Also, the server should ensure that incomplete data transfers are resumed in case of network failures. Further, the Study Configuration UI should handle invalid user input and ensure the input is only sent to the server when correct. These decisions ensure that the work of the end user is handled properly and the server is available when needed. Speed might be sacrificed to achieve this. This design goal is a refinement of the non-functional requirement "high reliability" in Requirement Analysis Document (section 3.3.2).  
+	
+	\item \textit{\bf{Scalability}}:
+	\\
+	Goal: The response time of the system must not degrade dramatically with the number of users and concurrent studies. 
+	\\\\
+	The system is used by multiple teams with several users working on different studies. The work carried out by these users could be done concurrently and so the system will have a big workload when multiple requests are sent to the server. Since the users need study data quickly to conduct their research, it will be cumbersome if the users have to wait for a long time to get the data. Thus, the server should support quick data access for users. However, the system must do this in a way which takes memory into account to avoid an extensive resource consumption.
+	
+	\item \textit{\bf{High performance}}: 
+	\\
+	Goal: to ensure a quick and responsive user interface by using a database, which facilitates fast data processing.  
+	\\\\
+	Performance is the key to this project. Each and every component of this project speed is determined by how fast the database can respond. The user might  feel the UI is slow and sluggish, due to a slow database. Contrary, a slow and sluggish UI can feel more responsive and quick with a fast database. A faster database can furthermore serve more users without them noticing the increased load on the database. Ideally, the user should never notice the program communicates with an external database, but just focus on program in front of him
 \end{itemize}
