@@ -5,27 +5,27 @@ This section contains various scenarios regarding operations between the user an
 % SCENARIO
 %
 \begin{table}[h!]
-\tabulinesep=1.5mm
-\begin{tabu} to \linewidth {p{2.9cm} X}
-	\tabucline[1.5pt]-
-	\textit{Scenario name} & \underline{bobStartsNewStudyConfiguration} \\
-	\hline
-	\textit{Participating actor \newline instances} & \underline{bob:\researcher} \newline \underline{System:\system}
-	\newline \underline{Configuration UI:\configUI} \\
-	\hline
-	\textit{Flow of events} &
-	\vspace{-3mm}
-	\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
-		\item Bob the \researcher has to start a new research  and opens the client from \configUI. 
-		\item Bob logs into the client and navigates to the "Study Configuration" page. 
-		\item Bob specify two reviewer and one validator and defines a research question based on some inclusion- and exclusion criteria to specify what papers should be returned. 
-		\item Bob confirms his study configuration and sends the request to the server by pressing "ok".
-		\item The \system returns an overview of the study configuration to the client.
-	\end{enumerate} \\
-	\tabucline[1.5pt]-
-\end{tabu}
-\caption{Scenario when a user creates a new study configuration}
-\label{sc:bobStartsNewStudyConfiguration}
+	\tabulinesep=1.5mm
+	\begin{tabu} to \linewidth {p{2.9cm} X}
+		\tabucline[1.5pt]-
+		\textit{Scenario name} & \underline{bobStartsNewStudyConfiguration} \\
+		\hline
+		\textit{Participating actor \newline instances} & \underline{bob:\researcher} \newline \underline{System:\system}
+		\newline \underline{Configuration UI:\configUI} \\
+		\hline
+		\textit{Flow of events} &
+		\vspace{-3mm}
+		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
+			\item Bob the \researcher has to start a new research  and opens the client from \configUI. 
+			\item Bob logs into the client and navigates to the "Study Configuration" page. 
+			\item Bob specify two reviewer and one validator and defines a research question based on some inclusion- and exclusion criteria to specify what papers should be returned. 
+			\item Bob confirms his study configuration and sends the request to the server by pressing "ok".
+			\item The \system returns an overview of the study configuration to the client.
+		\end{enumerate} \\
+		\tabucline[1.5pt]-
+	\end{tabu}
+	\caption{Scenario when a user creates a new study configuration}
+	\label{sc:bobStartsNewStudyConfiguration}
 \end{table}
 
 
@@ -39,7 +39,7 @@ This section contains various scenarios regarding operations between the user an
 		\textit{Scenario name} & \underline{ClientFilteringOperation} \\
 		\hline
 		\textit{Participating actor 
-		\newline instances} & \underline{server:\serverside}
+			\newline instances} & \underline{server:\serverside}
 		\newline \underline{client:\clientside} \\
 		\hline
 		\textit{Flow of events} &
@@ -53,14 +53,14 @@ This section contains various scenarios regarding operations between the user an
 			
 			\item \serverside finds 20 studies and a list is formed. Each study element in the list contains data about it.
 			
-			\item \serverside replies to the clients request by sending the article list of found articles.
+			\item \serverside replies to the client's request by sending the article list of found articles.
 			
 			\item \serverside returns an overview of the \studyconfig to the \clientside, 
 		\end{enumerate} \\
 		\tabucline[1.5pt]-
 	\end{tabu}
-		\caption{Scenario when a user sends a request with given filtering keywords trough the \clientside.}
-		\label{sc:ClientFilteringOperation}
+	\caption{Scenario when a user sends a request with given filtering keywords trough the \clientside.}
+	\label{sc:ClientFilteringOperation}
 \end{table}
 
 
@@ -82,7 +82,7 @@ This section contains various scenarios regarding operations between the user an
 		\vspace{-3mm}
 		\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=-1ex]
 			\item \serverside is receiving a request from \clientside: Search keywords {2001,2002,2003,2003,2004,2005,2005,2006,,2007}
-						
+			
 			\item \serverside validates \user authentication. \user credential is accepted
 			
 			\item \serverside measures all articles based on the keywords.
@@ -116,11 +116,11 @@ This section contains various scenarios regarding operations between the user an
 			
 			\item \serverside validates \user authentication. \user credential is accepted.
 			
-			\item \serverside searches for articles with the given Search Keyword, but are excluding articles which are not assigned to the user.
+			\item \serverside searches for articles with the given Search Keyword but are excluding articles which are not assigned to the user.
 			
-			\item 10 relevant articles was found but 5 was excluded because of the exclusion criteria.
+			\item 10 relevant articles were found, but 5 was excluded because of the exclusion criteria.
 			
-			\item A list with the remaining 5 articles is returned from \serverside to the \clientside\\				
+			\item A list with the remaining 5 articles is returned from \serverside to the \clientside\\                
 		\end{enumerate} \\
 		\tabucline[1.5pt]-
 	\end{tabu}
@@ -150,10 +150,10 @@ This section contains various scenarios regarding operations between the user an
 			
 			\item The given \user is not valid because it does not exist in the database.
 			
-			\item A response is sent to the \clientside detailing why bob does not have access to the \system. \\				
+			\item A response is sent to the \clientside detailing why bob does not have access to the \system. \\                
 		\end{enumerate} \\
 		\tabucline[1.5pt]-
 	\end{tabu}
-		\caption{Scenario when a invalid user is trying to get access to the server.}
-		\label{sc:ClientRequestWithInvalidUser}
+	\caption{Scenario when a invalid user is trying to get access to the server.}
+	\label{sc:ClientRequestWithInvalidUser}
 \end{table}

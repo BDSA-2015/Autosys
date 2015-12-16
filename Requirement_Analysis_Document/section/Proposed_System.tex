@@ -8,24 +8,24 @@ This section will describe the requirements of the system. In other words, it wi
 The system must support the following functional requirements:
 
 \begin{itemize}
-\item The user must be able to define the phases of a study. 
-\item The user must be able to create and manage classification criteria for different studies.
-\item The user must be able to create and manage inclusion and exclusion criteria.
-\item The user must be able to configure future phases in a study.
-\item The user must be able to store information about delivered tasks.
-% \item The user must be able to store data about Users and Teams. 
-\item The user must be able to create and manage teams and members.
-\item The user must be able to assign teams and members in the configuration of a study. 
-\item The user must be able to filter research papers based on demographic information specified by the user. 
-\item The user must be able to screen imported research papers. The result should be an export of papers consisting of primary studies (set of relevant papers). 
-\item The user must be able to export studies as plain data sets in different formats, e.g. as comma-separated-values(cvs) format. 
-% \item The system should only accept tasks sent from the same user who received them in the first place. 
-\item The system must support a role engine which identifies user rights. Possible roles to be supported could be a "viewer" and "validator" role. 
-\item The system must be able to handle multiple client requests concurrently. 
-\item The system must be able to store quality ratings of research papers based on coverage according to specific research criteria.
-\item The system must be able to extract data samples from specific studies. These are used to clarify any inconsistencies between different reviews of the same study. The data sample is accepted or rejected given in percentage terms - and is part of a phase in the study.
-\item The system must be able to generate a research protocol that describes the rationale, objectives, design and methodology of the data and configuration of a study. 
-
+	\item The user must be able to define the phases of a study. 
+	\item The user must be able to create and manage classification criteria for different studies.
+	\item The user must be able to create and manage inclusion and exclusion criteria.
+	\item The user must be able to configure future phases in a study.
+	\item The user must be able to store information about delivered tasks.
+	% \item The user must be able to store data about Users and Teams. 
+	\item The user must be able to create and manage teams and members.
+	\item The user must be able to assign teams and members in the configuration of a study. 
+	\item The user must be able to filter research papers based on demographic information specified by the user. 
+	\item The user must be able to screen imported research papers. The result should be an export of papers consisting of primary studies (set of relevant papers). 
+	\item The user must be able to export studies as plain data sets in different formats, e.g. as a comma-separated-values(CSV) format. 
+	% \item The system should only accept tasks sent from the same user who received them in the first place. 
+	\item The system must support a role engine which identifies user rights. Possible roles to be supported could be a "viewer" and "validator" role. 
+	\item The system must be able to handle multiple client requests concurrently. 
+	\item The system must be able to store quality ratings of research papers based on coverage according to specific research criteria.
+	\item The system must be able to extract data samples from specific studies. These are used to clarify any inconsistencies between different reviews of the same study. The data sample is accepted or rejected given in percentage terms - and is part of a phase in the study.
+	\item The system must be able to generate a research protocol that describes the rationale, objectives, design and methodology of the data and configuration of a study. 
+	
 \end{itemize}
 
 \newpage
@@ -36,60 +36,60 @@ The system must support the following nonfunctional requirements:
 \subsubsection{Usability}
 
 \begin{itemize}
-\item The user must be able to configure a study through the use of at most 3 application windows.
-\item A user with no background in IT should be able to understand the entire set of tools, which the system provides in approximately 30 minutes. 
-% \item The system must be complemented with an installation manual and a user manual.
-\item The user manual must provide knowledge about the interfaces provided by the system. This includes how a study is configured, how to manage teams and members and operations that the system support in general. 
+	\item The user must be able to configure a study through the use of at most 3 application windows.
+	\item A user with no background in IT should be able to understand the entire set of tools, which the system provides in approximately 30 minutes. 
+	% \item The system must be complemented with an installation manual and a user manual.
+	\item The user manual must provide knowledge about the interfaces provided by the system. This includes how a study is configured, how to manage teams and members and operations that the system support in general. 
 \end{itemize}
 
 \subsubsection{Reliability}
 
 \begin{itemize}
-% \item The system must restart automatically upon system failure.
-\item System restart should be done within 30 seconds upon system failure.
-% \item The system should strive to always be available. 
-\item The latest stored data should always be available through a backup.
+	% \item The system must restart automatically upon system failure.
+	\item System restart should be done within 30 seconds upon system failure.
+	% \item The system should strive to always be available. 
+	\item The latest stored data should always be available through a backup.
 \end{itemize}
 
 \subsubsection{Performance}
 
 \begin{itemize}
-\item The system should identify the role of a user and load the appropriate studies within 15 seconds.
-\item A user request for specific data should be handled no more than 10 seconds after it is received.
-\item The time before a response is sent should be no more than 30 seconds after the request is received.
-\item The system should support at least 200 users.
+	\item The system should identify the role of a user and load the appropriate studies within 15 seconds.
+	\item A user request for specific data should be handled no more than 10 seconds after it is received.
+	\item The time before a response is sent should be no more than 30 seconds after the request is received.
+	\item The system should support at least 200 users.
 \end{itemize}
 
 \subsubsection{Supportability}
 
 \begin{itemize}
-\item The server is maintained by the supplier of the system.
-\item The system must be fully functional independent of the other subpart of the complete system (the blue component).
-\item The system study configuration user interface must be replaceable.
-% \item The type of server used to store the data should be a MySQL server
+	\item The server is maintained by the supplier of the system.
+	\item The system must be fully functional independent of the other subpart of the complete system (the blue component).
+	\item The system study configuration user interface must be replaceable.
+	% \item The type of server used to store the data should be a MySQL server
 \end{itemize}
 
 \subsubsection{Implementation}
 
 \begin{itemize}
-% \item Be developed in C\# and WPF
-% What's relevant to the client is just the platform of implementation, not the actual language.
-% \item Data fields in the database should support the types: String, Boolean, Enumeration,Tags, Resource
-% WAY TOO TECHNICAL 
-\item The system should run on any Windows operating system newer than Windows XP.
+	% \item Be developed in C\# and WPF
+	% What's relevant to the client is just the platform of implementation, not the actual language.
+	% \item Data fields in the database should support the types: String, Boolean, Enumeration, Tags, Resource
+	% WAY TOO TECHNICAL 
+	\item The system should run on any Windows operating system newer than Windows XP.
 \end{itemize}
 
 \subsubsection{Packaging}
 
 \begin{itemize}
-\item The set up and installation of the server is done by the provider of the system, independent of the client.
-\item An employee with no prior knowledge about the system must be able to install and set up the server within a period of 15 min.
+	\item The setup and installation of the server are done by the provider of the system, independent of the client.
+	\item An employee with no prior knowledge about the system must be able to install and set up the server within a period of 15 min.
 \end{itemize}
 
 \subsubsection{Legal}
 
 \begin{itemize}
-\item The system should be publishable as Open Source Software in accordance to the GNU General Public License v2.0.
-\item The system should store data on a local Microsoft SQL Server provided by the IT University of Copenhagen following the rules issued by the institution. It should be able to host it on other platforms like, e.g. MySql.
+	\item The system should be publishable as Open Source Software in accordance to the GNU General Public License v2.0.
+	\item The system should store data on a local Microsoft SQL Server provided by the IT University of Copenhagen following the rules issued by the institution. It should be able to host it on other platforms like, e.g. MySql.
 \end{itemize}
 
