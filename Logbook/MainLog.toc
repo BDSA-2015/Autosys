@@ -3,5 +3,9 @@
 \contentsline {section}{\numberline {3}Log for date: 14/11-2015}{5}
 \contentsline {section}{\numberline {4}Log for date: 11/16-2015}{6}
 \contentsline {section}{\numberline {5}Log for date: 11/17-2015}{7}
-\contentsline {section}{\numberline {6}Log for date: 11/26-2015}{8}
-\contentsline {section}{\numberline {7}Log for date: 12/01-2015}{10}
+\contentsline {section}{\numberline {6}Log for date: 11/24-2015}{8}
+\contentsline {section}{\numberline {7}Log for date: 11/26-2015}{11}
+\contentsline {section}{\numberline {8}Log for date: 12/01-2015}{13}
+\contentsline {section}{\numberline {9}Log for date: 12/03-2015}{15}
+\contentsline {section}{\numberline {10}Log for date: 12/14-2015}{18}
+\contentsline {section}{\numberline {11}Log for date: 12/15-2015}{19}
