@@ -1,0 +1,10 @@
+\section{Test Reflection over Repository}
+All the functionalities have been tested by mocking an interface of the AutoSys-
+DbModel instead of using a test stub. We should have started on the integration
+tests earlier to validate that our repositories and the stored model entities and
+their relationships are actually compatible with a database. Initially, we tested
+if the logic in the repositories are called but not if the entities were actually
+5stored correctly. For this purpose, we used the Effort framework to create an
+in-memory database on a fake connection and validate the CRUD operations on
+a real database while checking if the entities were properly interrelated with the
+foreign key and data attribute functionalities supported by Entity Framework.\\
