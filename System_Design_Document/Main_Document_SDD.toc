@@ -1,13 +1,13 @@
 \contentsline {section}{\numberline {1}Introduction}{3}
 \contentsline {subsection}{\numberline {1.1}Purpose of the System}{3}
-\contentsline {subsection}{\numberline {1.2}Design Goals}{3}
-\contentsline {section}{\numberline {2}Proposed Software Architecture}{5}
-\contentsline {subsection}{\numberline {2.1}Subsystem Decomposition}{5}
-\contentsline {subsection}{\numberline {2.2}Identifying and Storing Persistent Data}{7}
-\contentsline {paragraph}{Identifying persistent objects}{7}
-\contentsline {paragraph}{Selecting a storage strategy}{7}
-\contentsline {subsection}{\numberline {2.3}Providing Access Control}{9}
-\contentsline {subsection}{\numberline {2.4}Designing the Global Control Flow}{9}
-\contentsline {subsection}{\numberline {2.5}Hardware/Software mapping}{10}
-\contentsline {paragraph}{Systems}{10}
-\contentsline {paragraph}{Program components}{11}
+\contentsline {subsection}{\numberline {1.2}Design Goals}{4}
+\contentsline {section}{\numberline {2}Proposed Software Architecture}{6}
+\contentsline {subsection}{\numberline {2.1}Subsystem Decomposition}{6}
+\contentsline {subsection}{\numberline {2.2}Identifying and Storing Persistent Data}{8}
+\contentsline {paragraph}{Identifying persistent objects}{8}
+\contentsline {paragraph}{Selecting a storage strategy}{9}
+\contentsline {subsection}{\numberline {2.3}Providing Access Control}{10}
+\contentsline {subsection}{\numberline {2.4}Designing the Global Control Flow}{10}
+\contentsline {subsection}{\numberline {2.5}Hardware/Software mapping}{11}
+\contentsline {paragraph}{Systems}{11}
+\contentsline {paragraph}{Program components}{12}
