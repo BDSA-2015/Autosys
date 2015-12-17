@@ -1,29 +1,15 @@
-The repository design pattern has been used as a layer in the code to separate
-the business code in our Application Logic and the database. The business
-logic accesses data from data stored in the Storage package where the AutoSysDbModel
-represents a local database in SQL Server 2014. This has been done
-to isolate the data layer to support unit testing and support swapping out the
-database technology. The code maintainability and readability is increased by
-separating business logic from data or service access logic. The entity-related
-repositories in the Storage pack separate the logic that retrieves the data and
-maps it to the stored entity model from the business logic by using the Auto-
-Mapper framework. The repositories are used to perform basic CRUD operations
-on entities that are required for permanent storage in the database. The
-repositories can query the data source layer (database, either local production
-database in SQL Server 2014 or in-memory database using fake connection in
-the Effort Framework for integration tests). The repositories do not map the
-4
-data from the stored model entities in the Storage package but AutoMapper
-is used to map the data source to a business logic entity in the StorageAdapter
-classes in the ApplicationLogic. These adapter classes are likewise used to
-store persist changes in the business entity to an Entity Framework database.
-Thus, the repository separates our business logic from the interactions with the
+In general, we have strived to use the design principles of the Repository pattern. It is used as a layer in the code to separate the business code in our Application Logic and the database. Consequently, the business logic only accesses data stored in the database through the Storage Adapters described previously. These Adapters use the repositories on mapped objects that are ultimately passed to our version of the DbContext class, AutoSysDbModel. The AutoSysDbModel is responsible for interacting with the data objects and writing them to the database (MSSQL 2014) using concrete repositories. This has been done to isolate the data layer, support easier unit testing and allow replacing of the database technology. Also, code maintainability and readability is increased by
+separating business logic from data or service access logic. \\
+
+\noindent
+In practice, the Adapters separate the logic and maps data objects to the database by using the the AutoMapper framework. Repositories are used to perform basic CRUD operations on these data objects for permanent storage in the database. The repositories then query the data source layer (database, either local production database in SQL Server 2014 or in-memory database using fake connection in the Effort Framework for integration tests). The repositories do not map the
+data from the stored model entities in the Storage package but AutoMapper is used to map the data source to a business logic entity in the StorageAdapter classes in the ApplicationLogic. These adapter classes are likewise used to store persist changes in the business entity to an Entity Framework database. Thus, the repository separates our business logic from the interactions with the
 underlying database.\\
 
 \textbf{Pros}\\
 Using the Repository design pattern has centralised our data logic and helped
 create a flexible architecture that can be adapted as the overall design of
-the application evolves. Without the repositories we would have to access data
+the application evolves. Without the repositories, we would have to access data
 sprinkled throughout our codebase. By way of example, updating a table would
 require to find every spot in our code that relies on it and update all of them.
 With the repository pattern we only need to update a single class and the rest
@@ -47,25 +33,14 @@ each database method call in the repositories. Instead, we now implement IDispos
 throughout all interfaces between the WebApi and the Storage layer to
 dispose after each client request is invoked and completed instead.\\
 
-\textbf{Test Reflection over Repository}\\
-All the functionalities have been tested by mocking an interface of the AutoSys-
-DbModel instead of using a test stub. We should have started on the integration
-tests earlier to validate that our repositories and the stored model entities and
-their relationships are actually compatible with a database. Initially, we tested
-if the logic in the repositories are called but not if the entities were actually
-5stored correctly. For this purpose, we used the Effort framework to create an
-in-memory database on a fake connection and validate the CRUD operations on
-a real database while checking if the entities were properly interrelated with the
-foreign key and data attribute functionalities supported by Entity Framework.\\
-
 \textbf{Conclusion of the Repository Design}\\
 We have performed numerous design choices in the actual implementation of
 the repository pattern. Mostly, the challenges considered have been whether we
 should use a generic repository or several concrete entity-related repositories
-and mapping the entities. We have chosen latter to achieve Separation of concerns
+and mapping the entities. We have chosen latter to achieve a better separation of concerns
 and reduce unnecessary unit testing complexity. As a result, we end up
 with more repository classes but also a significant readability and maintainability
 improvement and easier unit testing. The repository methods only need to
 change if the flow of data access changes and it is not impacted by the code in
 the business logic. Thus, working with a repository built on SOLID adds a lot
-more speed to future addition than without proper separation
+more speed to future additions. 

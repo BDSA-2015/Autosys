@@ -1,18 +1,18 @@
 \subsection{Interface documentation guidelines}
-To improve communication and understanding between the developers, the group has defined a set of documentation guidelines that must be followed strictly in order to have a consistent codebase structure and design. 
+We have strived to follow a defined set of documentation guidelines in order to have a consistent codebase structure and design. Also, this is used to improve communication and understanding between us as a team of developers. \\
 
+\textbf{Base Guidelines}
 
 \begin{itemize}
-	\item[Base Guidelines]
-	\item Every class are named with singular nouns.
-	\item Every class and methods are to be documented before they are implemented. The documentation must be precise in regarding for what the given class or method is responsible for. This will enable developers to be more effective in their work because they do not have to spend time on analyzing poorly written documentation or the implementation itself.
-	\item Every method must be defined in a way that they only have one responsibility. Long methods should be refactored into helping methods or moved to other appropriate sections of the system.
-	\item Every non-trivial parameters and returns are to be documented.
-	\item Every Method signatures must be written with camel-case and they must follow C\# formation standards. This improves readability for other c\# developers that are to read the code.
-	\item Error status must be returned as exceptions and propagated to appropriate layers. One should avoid catching general exception since this may mask problems that have nothing to do with the system. Instead of just catching a concrete 'Exception', one must catch specific exceptions that may be relevant to process such as "OutOfMemoryException" that would preferably be propagated to the user.
-	\item One should use generic classes where to seem to be fit. For an example, one should utilize an interface such as IList<object> instead of a concrete implementation such as 'List<object>'. This makes it easier to refactor the code since it is not tightly coupled to some concrete class.
+	\item All classes are named with singular nouns.
+	\item All classes and their respective methods are to be documented before they are implemented. The documentation must be precise in regarding to what the given class or method is responsible for. This will enable developers to work more efficiently without the need to spend time on analyzing poorly written documentation or the implementation itself.
+	\item All methods must be defined in a way so that they only have one responsibility. Long methods should be refactored into helping methods or moved to other appropriate sections of the system.
+	\item All non-trivial parameters and returns are to be documented.
+	\item All method signatures must be written with camel-case and they must follow C\# formation standards. This improves readability for other C\# developers that are to read the code.
+	\item Errors must be returned as exceptions and propagated to their appropriate layers. One should avoid catching general exceptions since this may mask problems that have nothing to do with the system. Instead, one must catch specific exceptions that may be relevant to a given process as opposed to just catching a general 'Exception'. By way of example, a specific exception like 'NonExistantException' would be more descriptive than a general 'Exception' if a user tries to delete a non-existent study. 
+	\item One should use generic classes where seemed fit. By way of example, one should utilize an interface such as IList<object> as replacement of a concrete implementation such as 'List<object>'. As a result, it becomes easier to refactor the code since it is not tightly coupled to some concrete class.
 	\item Dependency injection must be considered when creating new classes and methods. System modularity will make it easier to extend or refactor the system.
 	
 \end{itemize}
 
-It should be noted that the group had decided to follow these base guidelines as much as possible. However, it should be considered that exceptions may occur and some rules may be broken. These exceptions must be brought up into descussion or reconsidered before proceeding with the given activiety.
+It should be noted that the group has decided to follow these base guidelines as much as possible. However, it should be considered that parts of the project do not live up to these expectations. Seemingly, we have strived to bring these up in this document where certain design patterns have been brought up to discussion. Areas within the codebase structure that do not apply these guidelines correctly should be taken into account and discussed in the rest of this document.

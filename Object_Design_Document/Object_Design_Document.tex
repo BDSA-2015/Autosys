@@ -20,14 +20,22 @@
 %INCLUDE SECTIONS HERE
 \section{Introduction}
 
-This object design document has been written to provide the reader with an insight to our design choices throughout the project. To support this, class diagrams will be used to highlight where design patterns have been used. Finally, this is related back to the SOLID principles. The class diagrams are used to showcase our familarity with the techniques elaborated in OOSE throughout the course. Note that this document only focuses on important classes and provide a complete detailed description only of those. The purpose of the UML techniques is to better convey our design choices and final code structure. 
+The object design document has been written to provide the reader with an insight in our design choices throughout the project. To support this, class diagrams will be used as extra material highlighting where design patterns have been used. Finally, this is related back to the SOLID principles. The class diagrams are used to showcase our familiarity with the techniques elaborated in OOSE throughout the course. Note that this document only focuses on important design choices and patterns that we have strived to follow and implement throughout the code structure. The actual class diagrams and description of those have been attached as extra material. All together, the purpose of this document is to better convey our design choices and final code structure. 
 
 \input{InterfaceDocumentationGuidelines}
 
 \section{Design Decisions}
-	\subsection{Facade using a MainHandler}
+	\subsection{Generally code structure}
+		\input{GeneralCodeStructure}
+	\subsection{Mainhandler facade}
 		\input{MainHandlerFacade}
-	\subsection{Repository}
+	\subsection{Storage Adapters}
+		\input{StorageAdapters}
+		\newpage
+	\subsection{Storage repositories}
 		\input{Repository}
+	\subsection{Conclusion}
+		\input{Conclusion}
+	
 
 \end{document}
