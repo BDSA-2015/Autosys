@@ -1,0 +1,7 @@
+As communication between our programs and the Blue Teams GUI, we intended to to communicate with a Restful API. Regrettably we did not finish this part of the project and therefor it was never merged into the master branch and was not part of our hand-in\\
+\textit{(API branch: https://github.com/BDSA-2015/AutosysProgram/tree/Implementation/WebAPI)}\\\\
+The API as many other part of the systems were not completed due to time constraint and group members were needed on other parts of the system.\\
+We intended the API to be as minimalistic as possible. To achieve this we tried to move all error handling and validation out of the API and delegated this responsibility to a database facade. When the API received a HTTP request it would send a datarequest to the  MainHandler class, which would delegate a subsystem to retrieve the requested information. If any Exceptions were thrown  they would be caught in the MainHandler and converted to HTTPStatusCode which it would returned to the API. Upon receiving a response from the Mainhandler, the API would check the returned object and pass the statuscode in a HttpResponseMessage if any errors were caught\\
+We almost finished a simple implementation of this, but we did not have time for test and mapping the DTO variables to our own entities.\\
+\textbf{DTO object mapping}\\
+It should be noted we had much trouble mapping our entities to the predefined DTO entities in the API due to vast differences of what each entity should contain. This has tough us to base our own entities on provided material.
